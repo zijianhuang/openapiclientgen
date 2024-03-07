@@ -3,13 +3,15 @@ Reading an OpenAPI / Swagger YAML/JSON definition file, OpenApiClientGen generat
 
 This program is based on Fonlow.TypeScriptCodeDomCore and Fonlow.Poco2TsCore which are core components of [WebApiClientGen](https://github.com/zijianhuang/webapiclientgen), thus the codes generated share similar characteristics.
 
+Generated TypeScript codes conform to the [TypeScript strict mode](https://www.typescriptlang.org/tsconfig#strict), and the generated Angular 2+ codes conform to the [Angular strict mode](https://angular.io/guide/strict-mode).
+
 **Hints**
 
 If you are using ASP.NET or ASP.NET Core to develop Web API and would support C# clients and TypeScript clients, WebApiClientGen may provide an alternative solution that covers what offered by Swashbuckle+NSwag. And in some contexts it is more efficient, effective and comprehensive to use WebApiClientGen in SDLC without involving Open API / Swagger YAML/JSON definitions.
 
 ## Examples of Generated Codes
 
-OpenApiClientGen had been tested upon over 1000 Open API definitions in v3 formats and in v2 formats.
+OpenApiClientGen had been tested upon over 2,000 Open API definitions in v3 formats and in v2 formats.
 
 *  [pet.yaml](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/DemoClientApi/pet.yaml), [C# Client API codes generated](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/DemoClientApi/PetAuto.cs) of client API lib, and   [Integration Tests](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagApiTests).
 * [Generated TypeScript codes for Angular 5+](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/SwagTsTests/NG2Results/) and [integration tests for pet.yaml](https://github.com/zijianhuang/openapiclientgen/tree/master/ng2/src)
@@ -438,7 +440,7 @@ static readonly Dictionary<string, Type> basicClrTypeDic = new()
 };
 ```
 
-### To TypeScript
+### To TypeScript Codes
 
 ```c#
 static readonly Dictionary<string, string> basicTsTypeDic = new()
