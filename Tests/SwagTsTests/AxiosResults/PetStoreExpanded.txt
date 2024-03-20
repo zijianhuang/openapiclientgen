@@ -29,7 +29,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} pet response
 		 */
 		FindPets(tags: Array<string> | null | undefined, limit: number | null | undefined): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pets?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, {}).then(d => d.data);
+			return Axios.get<Array<Pet>>(this.baseUri + 'pets?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -39,7 +39,7 @@ export namespace MyNS {
 		 * @return {Pet} pet response
 		 */
 		AddPet(requestBody: NewPet): Promise<Pet> {
-			return Axios.post<Pet>(this.baseUri + 'pets', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<Pet>(this.baseUri + 'pets', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -49,7 +49,7 @@ export namespace MyNS {
 		 * @return {Pet} pet response
 		 */
 		FindPetById(id: string): Promise<Pet> {
-			return Axios.get<Pet>(this.baseUri + 'pets/' + id, {}).then(d => d.data);
+			return Axios.get<Pet>(this.baseUri + 'pets/' + id, {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**

@@ -219,7 +219,7 @@ export namespace MyNS {
 		 * @return {Pet} successful operation
 		 */
 		GetPetById(petId: string): Promise<Pet> {
-			return Axios.get<Pet>(this.baseUri + 'pet/' + petId, {}).then(d => d.data);
+			return Axios.get<Pet>(this.baseUri + 'pet/' + petId, {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -242,7 +242,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: Array<PetStatus>): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {}).then(d => d.data);
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -253,7 +253,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByTags(tags: Array<string>): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), {}).then(d => d.data);
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -268,7 +268,7 @@ export namespace MyNS {
 		 * @return {{[id: string]: number }} successful operation
 		 */
 		GetInventory(): Promise<{[id: string]: number }> {
-			return Axios.get<{[id: string]: number }>(this.baseUri + 'store/inventory', {}).then(d => d.data);
+			return Axios.get<{[id: string]: number }>(this.baseUri + 'store/inventory', {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -278,7 +278,7 @@ export namespace MyNS {
 		 * @return {Order} successful operation
 		 */
 		PlaceOrder(requestBody: Order): Promise<Order> {
-			return Axios.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -290,7 +290,7 @@ export namespace MyNS {
 		 * @return {Order} successful operation
 		 */
 		GetOrderById(orderId: string): Promise<Order> {
-			return Axios.get<Order>(this.baseUri + 'store/order/' + orderId, {}).then(d => d.data);
+			return Axios.get<Order>(this.baseUri + 'store/order/' + orderId, {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -328,7 +328,7 @@ export namespace MyNS {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string): Promise<User> {
-			return Axios.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), {}).then(d => d.data);
+			return Axios.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -382,7 +382,7 @@ export namespace MyNS {
 		 * @return {string} successful operation
 		 */
 		LoginUser(username: string, password: string): Promise<string> {
-			return Axios.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { responseType: 'text' }).then(d => d.data);
+			return Axios.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { responseType: 'text' }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**

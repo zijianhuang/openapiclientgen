@@ -610,7 +610,7 @@ export namespace MyNS {
 		 * @return {BBSPaymentReportResponseType} successful operation
 		 */
 		McpBulkBillPaymentReport1Eigw(requestBody: BBSReportRequestType): Promise<BBSPaymentReportResponseType> {
-			return this.http.post('mcp/bulkbillpaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/bulkbillpaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -619,7 +619,7 @@ export namespace MyNS {
 		 * @return {BBSProcessingReportResponseType} successful operation
 		 */
 		McpBulkBillProcessingReport1Eigw(requestBody: BBSReportRequestType): Promise<BBSProcessingReportResponseType> {
-			return this.http.post('mcp/bulkbillprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/bulkbillprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -628,7 +628,7 @@ export namespace MyNS {
 		 * @return {BulkBillStoreForwardResponseType} successful operation
 		 */
 		McpBulkBillStoreForwardGeneral1Eigw(requestBody: BulkBillStoreForwardRequestType): Promise<BulkBillStoreForwardResponseType> {
-			return this.http.post('mcp/bulkbillstoreforward/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/bulkbillstoreforward/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -637,7 +637,7 @@ export namespace MyNS {
 		 * @return {BulkBillStoreForwardResponseType} successful operation
 		 */
 		McpBulkBillStoreForwardPathology1Eigw(requestBody: BulkBillStoreForwardRequestType): Promise<BulkBillStoreForwardResponseType> {
-			return this.http.post('mcp/bulkbillstoreforward/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/bulkbillstoreforward/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -646,7 +646,7 @@ export namespace MyNS {
 		 * @return {BulkBillStoreForwardResponseType} successful operation
 		 */
 		McpBulkBillStoreForwardSpecialist1Eigw(requestBody: BulkBillStoreForwardRequestType): Promise<BulkBillStoreForwardResponseType> {
-			return this.http.post('mcp/bulkbillstoreforward/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/bulkbillstoreforward/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -655,7 +655,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthAllied1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return this.http.post('mcp/dvaalliedhealth/allied/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaalliedhealth/allied/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -664,7 +664,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthCommunityNursing1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return this.http.post('mcp/dvaalliedhealth/communitynursing/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaalliedhealth/communitynursing/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -673,7 +673,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthDental1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return this.http.post('mcp/dvaalliedhealth/dental/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaalliedhealth/dental/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -682,7 +682,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthOptical1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return this.http.post('mcp/dvaalliedhealth/optical/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaalliedhealth/optical/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -691,7 +691,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthPsych1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return this.http.post('mcp/dvaalliedhealth/psych/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaalliedhealth/psych/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -700,7 +700,7 @@ export namespace MyNS {
 		 * @return {AlliedHealthClaimResponseType} successful operation
 		 */
 		McpDvaAlliedHealthSpeechPathology1Eigw(requestBody: AlliedHealthClaimRequestType): Promise<AlliedHealthClaimResponseType> {
-			return this.http.post('mcp/dvaalliedhealth/speechpathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaalliedhealth/speechpathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -709,7 +709,7 @@ export namespace MyNS {
 		 * @return {DVAClaimResponseType} successful operation
 		 */
 		McpDvaClaimGeneral1Eigw(requestBody: DVAClaimRequestType): Promise<DVAClaimResponseType> {
-			return this.http.post('mcp/dvaclaim/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaclaim/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -718,7 +718,7 @@ export namespace MyNS {
 		 * @return {DVAClaimResponseType} successful operation
 		 */
 		McpDvaClaimPathology1Eigw(requestBody: DVAClaimRequestType): Promise<DVAClaimResponseType> {
-			return this.http.post('mcp/dvaclaim/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaclaim/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -727,7 +727,7 @@ export namespace MyNS {
 		 * @return {DVAClaimResponseType} successful operation
 		 */
 		McpDvaClaimSpecialist1Eigw(requestBody: DVAClaimRequestType): Promise<DVAClaimResponseType> {
-			return this.http.post('mcp/dvaclaim/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaclaim/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -736,7 +736,7 @@ export namespace MyNS {
 		 * @return {DVAPaymentReportResponseType} successful operation
 		 */
 		McpDvaPaymentReport1Eigw(requestBody: DVAReportRequestType): Promise<DVAPaymentReportResponseType> {
-			return this.http.post('mcp/dvapaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvapaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -745,7 +745,7 @@ export namespace MyNS {
 		 * @return {DVAProcessingReportResponseType} successful operation
 		 */
 		McpDvaProcessingReport1Eigw(requestBody: DVAReportRequestType): Promise<DVAProcessingReportResponseType> {
-			return this.http.post('mcp/dvaprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/dvaprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -754,7 +754,7 @@ export namespace MyNS {
 		 * @return {EnterpriseConcessionVerificationResponseType} successful operation
 		 */
 		McpEnterpriseConcessionVerification1Eigw(requestBody: EnterpriseConcessionVerificationRequestType): Promise<EnterpriseConcessionVerificationResponseType> {
-			return this.http.post('mcp/enterpriseconcessionverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/enterpriseconcessionverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -763,7 +763,7 @@ export namespace MyNS {
 		 * @return {EnterprisePatientVerificationResponseType} successful operation
 		 */
 		McpEnterprisePatientVerification1Eigw(requestBody: EnterprisePatientVerificationRequestType): Promise<EnterprisePatientVerificationResponseType> {
-			return this.http.post('mcp/enterprisepatientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/enterprisepatientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -772,7 +772,7 @@ export namespace MyNS {
 		 * @return {EnterpriseVeteranVerificationResponseType} successful operation
 		 */
 		McpEnterpriseVeteranVerification1Eigw(requestBody: EnterpriseVeteranVerificationRequestType): Promise<EnterpriseVeteranVerificationResponseType> {
-			return this.http.post('mcp/enterpriseveteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/enterpriseveteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -781,7 +781,7 @@ export namespace MyNS {
 		 * @return {PatientClaimInteractiveResponseType} successful operation
 		 */
 		McpPatientClaimInteractiveGeneral1Eigw(requestBody: PatientClaimInteractiveRequestType): Promise<PatientClaimInteractiveResponseType> {
-			return this.http.post('mcp/patientclaiminteractive/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/patientclaiminteractive/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -790,7 +790,7 @@ export namespace MyNS {
 		 * @return {PatientClaimInteractiveResponseType} successful operation
 		 */
 		McpPatientClaimInteractivePathology1Eigw(requestBody: PatientClaimInteractiveRequestType): Promise<PatientClaimInteractiveResponseType> {
-			return this.http.post('mcp/patientclaiminteractive/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/patientclaiminteractive/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -799,7 +799,7 @@ export namespace MyNS {
 		 * @return {PatientClaimInteractiveResponseType} successful operation
 		 */
 		McpPatientClaimInteractiveSpecialist1Eigw(requestBody: PatientClaimInteractiveRequestType): Promise<PatientClaimInteractiveResponseType> {
-			return this.http.post('mcp/patientclaiminteractive/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/patientclaiminteractive/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -808,7 +808,7 @@ export namespace MyNS {
 		 * @return {PatientVerificationResponseType} successful operation
 		 */
 		McpPatientVerification1Eigw(requestBody: PatientVerificationRequestType): Promise<PatientVerificationResponseType> {
-			return this.http.post('mcp/patientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/patientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -817,7 +817,7 @@ export namespace MyNS {
 		 * @return {PatientVerificationResponseType} successful operation
 		 */
 		McpPatientVerificationHf1Eigw(requestBody: PatientVerificationRequestType): Promise<PatientVerificationResponseType> {
-			return this.http.post('mcp/patientverification/hf/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/patientverification/hf/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -826,7 +826,7 @@ export namespace MyNS {
 		 * @return {PatientVerificationResponseType} successful operation
 		 */
 		McpPatientVerificationMedicare1Eigw(requestBody: PatientVerificationRequestType): Promise<PatientVerificationResponseType> {
-			return this.http.post('mcp/patientverification/medicare/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/patientverification/medicare/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -835,7 +835,7 @@ export namespace MyNS {
 		 * @return {RetrieveReportResponseType} successful operation
 		 */
 		McpRetrieveReportEcv1Eigw(requestBody: RetrieveReportRequestType): Promise<RetrieveReportResponseType> {
-			return this.http.post('mcp/enterpriseconcessionverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/enterpriseconcessionverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -844,7 +844,7 @@ export namespace MyNS {
 		 * @return {RetrieveReportResponseType} successful operation
 		 */
 		McpRetrieveReportEpv1Eigw(requestBody: RetrieveReportRequestType): Promise<RetrieveReportResponseType> {
-			return this.http.post('mcp/enterprisepatientverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/enterprisepatientverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -853,7 +853,7 @@ export namespace MyNS {
 		 * @return {RetrieveReportResponseType} successful operation
 		 */
 		McpRetrieveReportEvv1Eigw(requestBody: RetrieveReportRequestType): Promise<RetrieveReportResponseType> {
-			return this.http.post('mcp/enterpriseveteranverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/enterpriseveteranverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -862,7 +862,7 @@ export namespace MyNS {
 		 * @return {SameDayDeleteResponseType} successful operation
 		 */
 		McpSameDayDelete1Eigw(requestBody: SameDayDeleteRequestType): Promise<SameDayDeleteResponseType> {
-			return this.http.post('mcp/samedaydelete/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/samedaydelete/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -871,7 +871,7 @@ export namespace MyNS {
 		 * @return {StatusReportResponseType} successful operation
 		 */
 		McpStatusReport1Eigw(requestBody: StatusReportRequestType): Promise<StatusReportResponseType> {
-			return this.http.post('mcp/statusreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/statusreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -880,7 +880,7 @@ export namespace MyNS {
 		 * @return {VeteranVerificationResponseType} successful operation
 		 */
 		McpVeteranVerification1Eigw(requestBody: VeteranVerificationRequestType): Promise<VeteranVerificationResponseType> {
-			return this.http.post('mcp/veteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('mcp/veteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 

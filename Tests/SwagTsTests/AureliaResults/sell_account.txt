@@ -833,7 +833,7 @@ export namespace MyNS {
 		 * @return {FulfillmentPolicyResponse} Success
 		 */
 		GetFulfillmentPolicies(marketplace_id: string): Promise<FulfillmentPolicyResponse> {
-			return this.http.get('fulfillment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => d.json());
+			return this.http.get('fulfillment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -853,7 +853,7 @@ export namespace MyNS {
 		 * @return {FulfillmentPolicy} Success
 		 */
 		GetFulfillmentPolicy(fulfillmentPolicyId: string): Promise<FulfillmentPolicy> {
-			return this.http.get('fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), {}).then(d => d.json());
+			return this.http.get('fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -864,7 +864,7 @@ export namespace MyNS {
 		 * @return {SetFulfillmentPolicyResponse} OK
 		 */
 		UpdateFulfillmentPolicy(fulfillmentPolicyId: string, requestBody: FulfillmentPolicyRequest): Promise<SetFulfillmentPolicyResponse> {
-			return this.http.put('fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.put('fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -885,7 +885,7 @@ export namespace MyNS {
 		 * @return {FulfillmentPolicy} Success
 		 */
 		GetFulfillmentPolicyByName(marketplace_id: string, name: string): Promise<FulfillmentPolicy> {
-			return this.http.get('fulfillment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => d.json());
+			return this.http.get('fulfillment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -901,7 +901,7 @@ export namespace MyNS {
 		 * @return {PaymentPolicyResponse} Success
 		 */
 		GetPaymentPolicies(marketplace_id: string): Promise<PaymentPolicyResponse> {
-			return this.http.get('payment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => d.json());
+			return this.http.get('payment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -921,7 +921,7 @@ export namespace MyNS {
 		 * @return {PaymentPolicy} Success
 		 */
 		GetPaymentPolicy(payment_policy_id: string): Promise<PaymentPolicy> {
-			return this.http.get('payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), {}).then(d => d.json());
+			return this.http.get('payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -932,7 +932,7 @@ export namespace MyNS {
 		 * @return {SetPaymentPolicyResponse} OK
 		 */
 		UpdatePaymentPolicy(payment_policy_id: string, requestBody: PaymentPolicyRequest): Promise<SetPaymentPolicyResponse> {
-			return this.http.put('payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.put('payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -953,7 +953,7 @@ export namespace MyNS {
 		 * @return {PaymentPolicy} Success
 		 */
 		GetPaymentPolicyByName(marketplace_id: string, name: string): Promise<PaymentPolicy> {
-			return this.http.get('payment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => d.json());
+			return this.http.get('payment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -970,7 +970,7 @@ export namespace MyNS {
 		 * @return {PaymentsProgramResponse} Success
 		 */
 		GetPaymentsProgram(marketplace_id: string, payments_program_type: string): Promise<PaymentsProgramResponse> {
-			return this.http.get('payments_program/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/' + (payments_program_type == null ? '' : encodeURIComponent(payments_program_type)), {}).then(d => d.json());
+			return this.http.get('payments_program/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/' + (payments_program_type == null ? '' : encodeURIComponent(payments_program_type)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -985,7 +985,7 @@ export namespace MyNS {
 		 * @return {SellingPrivileges} Success
 		 */
 		GetPrivileges(): Promise<SellingPrivileges> {
-			return this.http.get('privilege/', {}).then(d => d.json());
+			return this.http.get('privilege/', {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -1000,7 +1000,7 @@ export namespace MyNS {
 		 * @return {Programs} Success
 		 */
 		GetOptedInPrograms(): Promise<Programs> {
-			return this.http.get('program/get_opted_in_programs', {}).then(d => d.json());
+			return this.http.get('program/get_opted_in_programs', {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1010,7 +1010,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		OptInToProgram(requestBody: Program): Promise<string> {
-			return this.http.post('program/opt_in', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.text());
+			return this.http.post('program/opt_in', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.text(); throw d;});
 		}
 
 		/**
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		OptOutOfProgram(requestBody: Program): Promise<string> {
-			return this.http.post('program/opt_out', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.text());
+			return this.http.post('program/opt_out', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.text(); throw d;});
 		}
 	}
 
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 		 * @return {RateTableResponse} Success
 		 */
 		GetRateTables(country_code: string | null | undefined): Promise<RateTableResponse> {
-			return this.http.get('rate_table/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {}).then(d => d.json());
+			return this.http.get('rate_table/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -1052,7 +1052,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicyResponse} Success
 		 */
 		GetReturnPolicies(marketplace_id: string): Promise<ReturnPolicyResponse> {
-			return this.http.get('return_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => d.json());
+			return this.http.get('return_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1072,7 +1072,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicy} Success
 		 */
 		GetReturnPolicy(return_policy_id: string): Promise<ReturnPolicy> {
-			return this.http.get('return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), {}).then(d => d.json());
+			return this.http.get('return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1083,7 +1083,7 @@ export namespace MyNS {
 		 * @return {SetReturnPolicyResponse} OK
 		 */
 		UpdateReturnPolicy(return_policy_id: string, requestBody: ReturnPolicyRequest): Promise<SetReturnPolicyResponse> {
-			return this.http.put('return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.put('return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1104,7 +1104,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicy} Success
 		 */
 		GetReturnPolicyByName(marketplace_id: string, name: string): Promise<ReturnPolicy> {
-			return this.http.get('return_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => d.json());
+			return this.http.get('return_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -1121,7 +1121,7 @@ export namespace MyNS {
 		 * @return {SalesTax} Success
 		 */
 		GetSalesTax(countryCode: string, jurisdictionId: string): Promise<SalesTax> {
-			return this.http.get('sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), {}).then(d => d.json());
+			return this.http.get('sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1154,7 +1154,7 @@ export namespace MyNS {
 		 * @return {SalesTaxes} Success
 		 */
 		GetSalesTaxes(country_code: string): Promise<SalesTaxes> {
-			return this.http.get('sales_tax/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {}).then(d => d.json());
+			return this.http.get('sales_tax/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 

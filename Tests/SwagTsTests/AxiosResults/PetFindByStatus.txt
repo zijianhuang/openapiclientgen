@@ -93,7 +93,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: Array<PetStatus>): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {}).then(d => d.data);
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -104,7 +104,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus2(status: PetStatus): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus2?status=' + status, {}).then(d => d.data);
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus2?status=' + status, {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -115,7 +115,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus3(status: PetStatus): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus3?status=' + status, {}).then(d => d.data);
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus3?status=' + status, {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 

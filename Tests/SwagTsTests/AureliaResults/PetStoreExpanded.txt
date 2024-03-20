@@ -30,7 +30,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} pet response
 		 */
 		FindPets(tags: Array<string> | null | undefined, limit: number | null | undefined): Promise<Array<Pet>> {
-			return this.http.get('pets?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, {}).then(d => d.json());
+			return this.http.get('pets?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -40,7 +40,7 @@ export namespace MyNS {
 		 * @return {Pet} pet response
 		 */
 		AddPet(requestBody: NewPet): Promise<Pet> {
-			return this.http.post('pets', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('pets', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -50,7 +50,7 @@ export namespace MyNS {
 		 * @return {Pet} pet response
 		 */
 		FindPetById(id: string): Promise<Pet> {
-			return this.http.get('pets/' + id, {}).then(d => d.json());
+			return this.http.get('pets/' + id, {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**

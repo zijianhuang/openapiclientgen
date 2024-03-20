@@ -832,7 +832,7 @@ export namespace MyNS {
 		 * @return {FulfillmentPolicyResponse} Success
 		 */
 		GetFulfillmentPolicies(marketplace_id: string): Promise<FulfillmentPolicyResponse> {
-			return Axios.get<FulfillmentPolicyResponse>(this.baseUri + 'fulfillment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => d.data);
+			return Axios.get<FulfillmentPolicyResponse>(this.baseUri + 'fulfillment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -852,7 +852,7 @@ export namespace MyNS {
 		 * @return {FulfillmentPolicy} Success
 		 */
 		GetFulfillmentPolicy(fulfillmentPolicyId: string): Promise<FulfillmentPolicy> {
-			return Axios.get<FulfillmentPolicy>(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), {}).then(d => d.data);
+			return Axios.get<FulfillmentPolicy>(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -863,7 +863,7 @@ export namespace MyNS {
 		 * @return {SetFulfillmentPolicyResponse} OK
 		 */
 		UpdateFulfillmentPolicy(fulfillmentPolicyId: string, requestBody: FulfillmentPolicyRequest): Promise<SetFulfillmentPolicyResponse> {
-			return Axios.put<SetFulfillmentPolicyResponse>(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.put<SetFulfillmentPolicyResponse>(this.baseUri + 'fulfillment_policy/' + (fulfillmentPolicyId == null ? '' : encodeURIComponent(fulfillmentPolicyId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -884,7 +884,7 @@ export namespace MyNS {
 		 * @return {FulfillmentPolicy} Success
 		 */
 		GetFulfillmentPolicyByName(marketplace_id: string, name: string): Promise<FulfillmentPolicy> {
-			return Axios.get<FulfillmentPolicy>(this.baseUri + 'fulfillment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => d.data);
+			return Axios.get<FulfillmentPolicy>(this.baseUri + 'fulfillment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -899,7 +899,7 @@ export namespace MyNS {
 		 * @return {PaymentPolicyResponse} Success
 		 */
 		GetPaymentPolicies(marketplace_id: string): Promise<PaymentPolicyResponse> {
-			return Axios.get<PaymentPolicyResponse>(this.baseUri + 'payment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => d.data);
+			return Axios.get<PaymentPolicyResponse>(this.baseUri + 'payment_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -919,7 +919,7 @@ export namespace MyNS {
 		 * @return {PaymentPolicy} Success
 		 */
 		GetPaymentPolicy(payment_policy_id: string): Promise<PaymentPolicy> {
-			return Axios.get<PaymentPolicy>(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), {}).then(d => d.data);
+			return Axios.get<PaymentPolicy>(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -930,7 +930,7 @@ export namespace MyNS {
 		 * @return {SetPaymentPolicyResponse} OK
 		 */
 		UpdatePaymentPolicy(payment_policy_id: string, requestBody: PaymentPolicyRequest): Promise<SetPaymentPolicyResponse> {
-			return Axios.put<SetPaymentPolicyResponse>(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.put<SetPaymentPolicyResponse>(this.baseUri + 'payment_policy/' + (payment_policy_id == null ? '' : encodeURIComponent(payment_policy_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -951,7 +951,7 @@ export namespace MyNS {
 		 * @return {PaymentPolicy} Success
 		 */
 		GetPaymentPolicyByName(marketplace_id: string, name: string): Promise<PaymentPolicy> {
-			return Axios.get<PaymentPolicy>(this.baseUri + 'payment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => d.data);
+			return Axios.get<PaymentPolicy>(this.baseUri + 'payment_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -967,7 +967,7 @@ export namespace MyNS {
 		 * @return {PaymentsProgramResponse} Success
 		 */
 		GetPaymentsProgram(marketplace_id: string, payments_program_type: string): Promise<PaymentsProgramResponse> {
-			return Axios.get<PaymentsProgramResponse>(this.baseUri + 'payments_program/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/' + (payments_program_type == null ? '' : encodeURIComponent(payments_program_type)), {}).then(d => d.data);
+			return Axios.get<PaymentsProgramResponse>(this.baseUri + 'payments_program/' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '/' + (payments_program_type == null ? '' : encodeURIComponent(payments_program_type)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -981,7 +981,7 @@ export namespace MyNS {
 		 * @return {SellingPrivileges} Success
 		 */
 		GetPrivileges(): Promise<SellingPrivileges> {
-			return Axios.get<SellingPrivileges>(this.baseUri + 'privilege/', {}).then(d => d.data);
+			return Axios.get<SellingPrivileges>(this.baseUri + 'privilege/', {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -995,7 +995,7 @@ export namespace MyNS {
 		 * @return {Programs} Success
 		 */
 		GetOptedInPrograms(): Promise<Programs> {
-			return Axios.get<Programs>(this.baseUri + 'program/get_opted_in_programs', {}).then(d => d.data);
+			return Axios.get<Programs>(this.baseUri + 'program/get_opted_in_programs', {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1005,7 +1005,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		OptInToProgram(requestBody: Program): Promise<string> {
-			return Axios.post(this.baseUri + 'program/opt_in', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' }).then(d => d.data);
+			return Axios.post(this.baseUri + 'program/opt_in', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		OptOutOfProgram(requestBody: Program): Promise<string> {
-			return Axios.post(this.baseUri + 'program/opt_out', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' }).then(d => d.data);
+			return Axios.post(this.baseUri + 'program/opt_out', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 		 * @return {RateTableResponse} Success
 		 */
 		GetRateTables(country_code: string | null | undefined): Promise<RateTableResponse> {
-			return Axios.get<RateTableResponse>(this.baseUri + 'rate_table/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {}).then(d => d.data);
+			return Axios.get<RateTableResponse>(this.baseUri + 'rate_table/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -1045,7 +1045,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicyResponse} Success
 		 */
 		GetReturnPolicies(marketplace_id: string): Promise<ReturnPolicyResponse> {
-			return Axios.get<ReturnPolicyResponse>(this.baseUri + 'return_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => d.data);
+			return Axios.get<ReturnPolicyResponse>(this.baseUri + 'return_policy/?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1065,7 +1065,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicy} Success
 		 */
 		GetReturnPolicy(return_policy_id: string): Promise<ReturnPolicy> {
-			return Axios.get<ReturnPolicy>(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), {}).then(d => d.data);
+			return Axios.get<ReturnPolicy>(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1076,7 +1076,7 @@ export namespace MyNS {
 		 * @return {SetReturnPolicyResponse} OK
 		 */
 		UpdateReturnPolicy(return_policy_id: string, requestBody: ReturnPolicyRequest): Promise<SetReturnPolicyResponse> {
-			return Axios.put<SetReturnPolicyResponse>(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.put<SetReturnPolicyResponse>(this.baseUri + 'return_policy/' + (return_policy_id == null ? '' : encodeURIComponent(return_policy_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 		 * @return {ReturnPolicy} Success
 		 */
 		GetReturnPolicyByName(marketplace_id: string, name: string): Promise<ReturnPolicy> {
-			return Axios.get<ReturnPolicy>(this.baseUri + 'return_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => d.data);
+			return Axios.get<ReturnPolicy>(this.baseUri + 'return_policy/get_by_policy_name?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&name=' + (name == null ? '' : encodeURIComponent(name)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -1113,7 +1113,7 @@ export namespace MyNS {
 		 * @return {SalesTax} Success
 		 */
 		GetSalesTax(countryCode: string, jurisdictionId: string): Promise<SalesTax> {
-			return Axios.get<SalesTax>(this.baseUri + 'sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), {}).then(d => d.data);
+			return Axios.get<SalesTax>(this.baseUri + 'sales_tax/' + (countryCode == null ? '' : encodeURIComponent(countryCode)) + '/' + (jurisdictionId == null ? '' : encodeURIComponent(jurisdictionId)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1146,7 +1146,7 @@ export namespace MyNS {
 		 * @return {SalesTaxes} Success
 		 */
 		GetSalesTaxes(country_code: string): Promise<SalesTaxes> {
-			return Axios.get<SalesTaxes>(this.baseUri + 'sales_tax/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {}).then(d => d.data);
+			return Axios.get<SalesTaxes>(this.baseUri + 'sales_tax/?country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 

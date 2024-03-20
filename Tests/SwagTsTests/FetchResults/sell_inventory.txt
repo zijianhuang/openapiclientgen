@@ -1481,7 +1481,7 @@ export namespace MyNS {
 		 * @return {InventoryLocationResponse} Success
 		 */
 		GetInventoryLocation(merchantLocationKey: string): Promise<InventoryLocationResponse> {
-			return fetch(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1512,7 +1512,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		DisableInventoryLocation(merchantLocationKey: string): Promise<string> {
-			return fetch(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/disable', { method: 'post' }).then(d => d.text());
+			return fetch(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/disable', { method: 'post' }).then(d => {if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;});
 		}
 
 		/**
@@ -1522,7 +1522,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		EnableInventoryLocation(merchantLocationKey: string): Promise<string> {
-			return fetch(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/enable', { method: 'post' }).then(d => d.text());
+			return fetch(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/enable', { method: 'post' }).then(d => {if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;});
 		}
 
 		/**
@@ -1533,7 +1533,7 @@ export namespace MyNS {
 		 * @return {LocationResponse} Success
 		 */
 		GetInventoryLocations(limit: string | null | undefined, offset: string | null | undefined): Promise<LocationResponse> {
-			return fetch(this.baseUri + 'location?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'location?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1559,7 +1559,7 @@ export namespace MyNS {
 		 * @return {InventoryItemWithSkuLocaleGroupid} Success
 		 */
 		GetInventoryItem(sku: string): Promise<InventoryItemWithSkuLocaleGroupid> {
-			return fetch(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1570,7 +1570,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		CreateOrReplaceInventoryItem(sku: string, requestBody: InventoryItem): Promise<BaseResponse> {
-			return fetch(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1591,7 +1591,7 @@ export namespace MyNS {
 		 * @return {InventoryItems} Success
 		 */
 		GetInventoryItems(limit: string | null | undefined, offset: string | null | undefined): Promise<InventoryItems> {
-			return fetch(this.baseUri + 'inventory_item?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'inventory_item?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1601,7 +1601,7 @@ export namespace MyNS {
 		 * @return {BulkPriceQuantityResponse} Success
 		 */
 		BulkUpdatePriceQuantity(requestBody: BulkPriceQuantity): Promise<BulkPriceQuantityResponse> {
-			return fetch(this.baseUri + 'bulk_update_price_quantity', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'bulk_update_price_quantity', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1611,7 +1611,7 @@ export namespace MyNS {
 		 * @return {BulkInventoryItemResponse} Success
 		 */
 		BulkCreateOrReplaceInventoryItem(requestBody: BulkInventoryItem): Promise<BulkInventoryItemResponse> {
-			return fetch(this.baseUri + 'bulk_create_or_replace_inventory_item', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'bulk_create_or_replace_inventory_item', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1621,7 +1621,7 @@ export namespace MyNS {
 		 * @return {BulkGetInventoryItemResponse} Success
 		 */
 		BulkGetInventoryItem(requestBody: BulkGetInventoryItem): Promise<BulkGetInventoryItemResponse> {
-			return fetch(this.baseUri + 'bulk_get_inventory_item', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'bulk_get_inventory_item', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -1636,7 +1636,7 @@ export namespace MyNS {
 		 * @return {Compatibility} Success
 		 */
 		GetProductCompatibility(sku: string): Promise<Compatibility> {
-			return fetch(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1647,7 +1647,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		CreateOrReplaceProductCompatibility(sku: string, requestBody: Compatibility): Promise<BaseResponse> {
-			return fetch(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1676,7 +1676,7 @@ export namespace MyNS {
 		 * @return {Offers} Success
 		 */
 		GetOffers(sku: string | null | undefined, marketplace_id: string | null | undefined, format: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Promise<Offers> {
-			return fetch(this.baseUri + 'offer?sku=' + (sku == null ? '' : encodeURIComponent(sku)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&format=' + (format == null ? '' : encodeURIComponent(format)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'offer?sku=' + (sku == null ? '' : encodeURIComponent(sku)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&format=' + (format == null ? '' : encodeURIComponent(format)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1696,7 +1696,7 @@ export namespace MyNS {
 		 * @return {EbayOfferDetailsWithAll} Success
 		 */
 		GetOffer(offerId: string): Promise<EbayOfferDetailsWithAll> {
-			return fetch(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1707,7 +1707,7 @@ export namespace MyNS {
 		 * @return {OfferResponse} Success
 		 */
 		UpdateOffer(offerId: string, requestBody: EbayOfferDetailsWithId): Promise<OfferResponse> {
-			return fetch(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1727,7 +1727,7 @@ export namespace MyNS {
 		 * @return {PublishResponse} Success
 		 */
 		PublishOffer(offerId: string): Promise<PublishResponse> {
-			return fetch(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/publish/', { method: 'post' }).then(d => d.json());
+			return fetch(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/publish/', { method: 'post' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1737,7 +1737,7 @@ export namespace MyNS {
 		 * @return {PublishResponse} Success
 		 */
 		PublishOfferByInventoryItemGroup(requestBody: PublishByInventoryItemGroupRequest): Promise<PublishResponse> {
-			return fetch(this.baseUri + 'offer/publish_by_inventory_item_group/', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'offer/publish_by_inventory_item_group/', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1757,7 +1757,7 @@ export namespace MyNS {
 		 * @return {FeesSummaryResponse} Success
 		 */
 		GetListingFees(requestBody: OfferKeysWithId): Promise<FeesSummaryResponse> {
-			return fetch(this.baseUri + 'offer/get_listing_fees', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'offer/get_listing_fees', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1767,7 +1767,7 @@ export namespace MyNS {
 		 * @return {BulkOfferResponse} Success
 		 */
 		BulkCreateOffer(requestBody: BulkEbayOfferDetailsWithKeys): Promise<BulkOfferResponse> {
-			return fetch(this.baseUri + 'bulk_create_offer', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'bulk_create_offer', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1777,7 +1777,7 @@ export namespace MyNS {
 		 * @return {BulkPublishResponse} Success
 		 */
 		BulkPublishOffer(requestBody: BulkOffer): Promise<BulkPublishResponse> {
-			return fetch(this.baseUri + 'bulk_publish_offer', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'bulk_publish_offer', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1787,7 +1787,7 @@ export namespace MyNS {
 		 * @return {WithdrawResponse} Success
 		 */
 		WithdrawOffer(offerId: string): Promise<WithdrawResponse> {
-			return fetch(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/withdraw', { method: 'post' }).then(d => d.json());
+			return fetch(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/withdraw', { method: 'post' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -1802,7 +1802,7 @@ export namespace MyNS {
 		 * @return {InventoryItemGroup} Success
 		 */
 		GetInventoryItemGroup(inventoryItemGroupKey: string): Promise<InventoryItemGroup> {
-			return fetch(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1813,7 +1813,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		CreateOrReplaceInventoryItemGroup(inventoryItemGroupKey: string, requestBody: InventoryItemGroup): Promise<BaseResponse> {
-			return fetch(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), { method: 'put', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1838,7 +1838,7 @@ export namespace MyNS {
 		 * @return {BulkMigrateListingResponse} Success
 		 */
 		BulkMigrateListing(requestBody: BulkMigrateListing): Promise<BulkMigrateListingResponse> {
-			return fetch(this.baseUri + 'bulk_migrate_listing', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'bulk_migrate_listing', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 

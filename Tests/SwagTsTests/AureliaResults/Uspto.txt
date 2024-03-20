@@ -32,7 +32,7 @@ export namespace MyNS {
 		 * @return {DataSetList} Returns a list of data sets
 		 */
 		ListDataSets(): Promise<DataSetList> {
-			return this.http.get('', {}).then(d => d.json());
+			return this.http.get('', {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -44,7 +44,7 @@ export namespace MyNS {
 		 * @return {string} The dataset API for the given version is found and it is accessible to consume.
 		 */
 		ListSearchableFields(dataset: string, version: string): Promise<string> {
-			return this.http.get('' + (dataset == null ? '' : encodeURIComponent(dataset)) + '/' + (version == null ? '' : encodeURIComponent(version)) + '/fields', {}).then(d => d.text());
+			return this.http.get('' + (dataset == null ? '' : encodeURIComponent(dataset)) + '/' + (version == null ? '' : encodeURIComponent(version)) + '/fields', {}).then(d => {if (d.status<=204) return d.text(); throw d;});
 		}
 	}
 
