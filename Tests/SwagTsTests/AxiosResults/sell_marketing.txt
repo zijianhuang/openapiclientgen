@@ -1215,7 +1215,7 @@ export namespace MyNS {
 		 * @return {BulkCreateAdsByInventoryReferenceResponse} Success
 		 */
 		BulkCreateAdsByInventoryReference(campaign_id: string, requestBody: BulkCreateAdsByInventoryReferenceRequest): Promise<BulkCreateAdsByInventoryReferenceResponse> {
-			return Axios.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1226,7 +1226,7 @@ export namespace MyNS {
 		 * @return {BulkAdResponse} Success
 		 */
 		BulkCreateAdsByListingId(campaign_id: string, requestBody: BulkCreateAdRequest): Promise<BulkAdResponse> {
-			return Axios.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1237,7 +1237,7 @@ export namespace MyNS {
 		 * @return {BulkDeleteAdsByInventoryReferenceResponse} Success
 		 */
 		BulkDeleteAdsByInventoryReference(campaign_id: string, requestBody: BulkDeleteAdsByInventoryReferenceRequest): Promise<BulkDeleteAdsByInventoryReferenceResponse> {
-			return Axios.post<BulkDeleteAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkDeleteAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1248,7 +1248,7 @@ export namespace MyNS {
 		 * @return {BulkDeleteAdResponse} Success
 		 */
 		BulkDeleteAdsByListingId(campaign_id: string, requestBody: BulkDeleteAdRequest): Promise<BulkDeleteAdResponse> {
-			return Axios.post<BulkDeleteAdResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkDeleteAdResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1259,7 +1259,7 @@ export namespace MyNS {
 		 * @return {BulkCreateAdsByInventoryReferenceResponse} Success
 		 */
 		BulkUpdateAdsBidByInventoryReference(campaign_id: string, requestBody: BulkCreateAdsByInventoryReferenceRequest): Promise<BulkCreateAdsByInventoryReferenceResponse> {
-			return Axios.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkCreateAdsByInventoryReferenceResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1270,7 +1270,7 @@ export namespace MyNS {
 		 * @return {BulkAdResponse} Success
 		 */
 		BulkUpdateAdsBidByListingId(campaign_id: string, requestBody: BulkCreateAdRequest): Promise<BulkAdResponse> {
-			return Axios.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkAdResponse>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1283,7 +1283,7 @@ export namespace MyNS {
 		 * @return {AdPagedCollection} Success
 		 */
 		GetAds(campaign_id: string, limit: string | null | undefined, listing_ids: string, offset: string | null | undefined): Promise<AdPagedCollection> {
-			return Axios.get<AdPagedCollection>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&listing_ids=' + (listing_ids == null ? '' : encodeURIComponent(listing_ids)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => d.data);
+			return Axios.get<AdPagedCollection>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&listing_ids=' + (listing_ids == null ? '' : encodeURIComponent(listing_ids)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1316,7 +1316,7 @@ export namespace MyNS {
 		 * @return {Ad} Success
 		 */
 		GetAd(ad_id: string, campaign_id: string): Promise<Ad> {
-			return Axios.get<Ad>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)), {}).then(d => d.data);
+			return Axios.get<Ad>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1338,7 +1338,7 @@ export namespace MyNS {
 		 * @return {AdIds} Success
 		 */
 		DeleteAdsByInventoryReference(campaign_id: string, requestBody: DeleteAdsByInventoryReferenceRequest): Promise<AdIds> {
-			return Axios.post<AdIds>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<AdIds>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1350,7 +1350,7 @@ export namespace MyNS {
 		 * @return {Ads} Success
 		 */
 		GetAdsByInventoryReference(campaign_id: string, inventory_reference_id: string, inventory_reference_type: string): Promise<Ads> {
-			return Axios.get<Ads>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/get_ads_by_inventory_reference&inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)), {}).then(d => d.data);
+			return Axios.get<Ads>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/get_ads_by_inventory_reference&inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1393,7 +1393,7 @@ export namespace MyNS {
 		 * @return {CampaignPagedCollection} Success
 		 */
 		GetCampaigns(campaign_name: string | null | undefined, campaign_status: string | null | undefined, end_date_range: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, start_date_range: string | null | undefined): Promise<CampaignPagedCollection> {
-			return Axios.get<CampaignPagedCollection>(this.baseUri + 'ad_campaign?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)) + '&campaign_status=' + (campaign_status == null ? '' : encodeURIComponent(campaign_status)) + '&end_date_range=' + (end_date_range == null ? '' : encodeURIComponent(end_date_range)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&start_date_range=' + (start_date_range == null ? '' : encodeURIComponent(start_date_range)), {}).then(d => d.data);
+			return Axios.get<CampaignPagedCollection>(this.baseUri + 'ad_campaign?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)) + '&campaign_status=' + (campaign_status == null ? '' : encodeURIComponent(campaign_status)) + '&end_date_range=' + (end_date_range == null ? '' : encodeURIComponent(end_date_range)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&start_date_range=' + (start_date_range == null ? '' : encodeURIComponent(start_date_range)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1413,7 +1413,7 @@ export namespace MyNS {
 		 * @return {Campaign} Success
 		 */
 		GetCampaign(campaign_id: string): Promise<Campaign> {
-			return Axios.get<Campaign>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)), {}).then(d => d.data);
+			return Axios.get<Campaign>(this.baseUri + 'ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1445,7 +1445,7 @@ export namespace MyNS {
 		 * @return {Campaigns} Success
 		 */
 		FindCampaignByAdReference(inventory_reference_id: string | null | undefined, inventory_reference_type: string | null | undefined, listing_id: string | null | undefined): Promise<Campaigns> {
-			return Axios.get<Campaigns>(this.baseUri + 'ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)), {}).then(d => d.data);
+			return Axios.get<Campaigns>(this.baseUri + 'ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 		 * @return {Campaign} Success
 		 */
 		GetCampaignByName(campaign_name: string): Promise<Campaign> {
-			return Axios.get<Campaign>(this.baseUri + 'ad_campaign/get_campaign_by_name?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)), {}).then(d => d.data);
+			return Axios.get<Campaign>(this.baseUri + 'ad_campaign/get_campaign_by_name?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1515,7 +1515,7 @@ export namespace MyNS {
 		 * @return {ReportMetadatas} Success
 		 */
 		GetReportMetadata(): Promise<ReportMetadatas> {
-			return Axios.get<ReportMetadatas>(this.baseUri + 'ad_report_metadata', {}).then(d => d.data);
+			return Axios.get<ReportMetadatas>(this.baseUri + 'ad_report_metadata', {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1525,7 +1525,7 @@ export namespace MyNS {
 		 * @return {ReportMetadata} Success
 		 */
 		GetReportMetadataForReportType(report_type: string): Promise<ReportMetadata> {
-			return Axios.get<ReportMetadata>(this.baseUri + 'ad_report_metadata/' + (report_type == null ? '' : encodeURIComponent(report_type)), {}).then(d => d.data);
+			return Axios.get<ReportMetadata>(this.baseUri + 'ad_report_metadata/' + (report_type == null ? '' : encodeURIComponent(report_type)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -1542,7 +1542,7 @@ export namespace MyNS {
 		 * @return {ReportTaskPagedCollection} Success
 		 */
 		GetReportTasks(limit: string | null | undefined, offset: string | null | undefined, report_task_statuses: string | null | undefined): Promise<ReportTaskPagedCollection> {
-			return Axios.get<ReportTaskPagedCollection>(this.baseUri + 'ad_report_task?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&report_task_statuses=' + (report_task_statuses == null ? '' : encodeURIComponent(report_task_statuses)), {}).then(d => d.data);
+			return Axios.get<ReportTaskPagedCollection>(this.baseUri + 'ad_report_task?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&report_task_statuses=' + (report_task_statuses == null ? '' : encodeURIComponent(report_task_statuses)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1562,7 +1562,7 @@ export namespace MyNS {
 		 * @return {ReportTask} Success
 		 */
 		GetReportTask(report_task_id: string): Promise<ReportTask> {
-			return Axios.get<ReportTask>(this.baseUri + 'ad_report_task/' + (report_task_id == null ? '' : encodeURIComponent(report_task_id)), {}).then(d => d.data);
+			return Axios.get<ReportTask>(this.baseUri + 'ad_report_task/' + (report_task_id == null ? '' : encodeURIComponent(report_task_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 		 * @return {ItemPriceMarkdown} Success
 		 */
 		GetItemPriceMarkdownPromotion(promotion_id: string): Promise<ItemPriceMarkdown> {
-			return Axios.get<ItemPriceMarkdown>(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), {}).then(d => d.data);
+			return Axios.get<ItemPriceMarkdown>(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1608,7 +1608,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		UpdateItemPriceMarkdownPromotion(promotion_id: string, requestBody: ItemPriceMarkdown): Promise<string> {
-			return Axios.put(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' }).then(d => d.data);
+			return Axios.put(this.baseUri + 'item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1643,7 +1643,7 @@ export namespace MyNS {
 		 * @return {ItemPromotionResponse} Success
 		 */
 		GetItemPromotion(promotion_id: string): Promise<ItemPromotionResponse> {
-			return Axios.get<ItemPromotionResponse>(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), {}).then(d => d.data);
+			return Axios.get<ItemPromotionResponse>(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1654,7 +1654,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		UpdateItemPromotion(promotion_id: string, requestBody: ItemPromotion): Promise<BaseResponse> {
-			return Axios.put<BaseResponse>(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.put<BaseResponse>(this.baseUri + 'item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1700,7 +1700,7 @@ export namespace MyNS {
 		 * @return {PromotionsPagedCollection} Success
 		 */
 		GetPromotions(limit: string | null | undefined, marketplace_id: string, offset: string | null | undefined, promotion_status: string | null | undefined, promotion_type: string | null | undefined, q: string | null | undefined, sort: string | null | undefined): Promise<PromotionsPagedCollection> {
-			return Axios.get<PromotionsPagedCollection>(this.baseUri + 'promotion?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {}).then(d => d.data);
+			return Axios.get<PromotionsPagedCollection>(this.baseUri + 'promotion?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1740,7 +1740,7 @@ export namespace MyNS {
 		 * @return {PromotionsReportPagedCollection} Success
 		 */
 		GetPromotionReports(limit: string | null | undefined, marketplace_id: string, offset: string | null | undefined, promotion_status: string | null | undefined, promotion_type: string | null | undefined, q: string | null | undefined): Promise<PromotionsReportPagedCollection> {
-			return Axios.get<PromotionsReportPagedCollection>(this.baseUri + 'promotion_report?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), {}).then(d => d.data);
+			return Axios.get<PromotionsReportPagedCollection>(this.baseUri + 'promotion_report?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -1755,7 +1755,7 @@ export namespace MyNS {
 		 * @return {SummaryReportResponse} Success
 		 */
 		GetPromotionSummaryReport(marketplace_id: string): Promise<SummaryReportResponse> {
-			return Axios.get<SummaryReportResponse>(this.baseUri + 'promotion_summary_report?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => d.data);
+			return Axios.get<SummaryReportResponse>(this.baseUri + 'promotion_summary_report?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 

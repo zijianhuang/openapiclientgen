@@ -328,7 +328,7 @@ export namespace MyNS {
 		 * @return {Payout} Success
 		 */
 		GetPayout(payout_Id: string): Promise<Payout> {
-			return Axios.get<Payout>(this.baseUri + 'payout/' + (payout_Id == null ? '' : encodeURIComponent(payout_Id)), {}).then(d => d.data);
+			return Axios.get<Payout>(this.baseUri + 'payout/' + (payout_Id == null ? '' : encodeURIComponent(payout_Id)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -341,7 +341,7 @@ export namespace MyNS {
 		 * @return {Payouts} Success
 		 */
 		GetPayouts(filter: string | null | undefined, sort: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Promise<Payouts> {
-			return Axios.get<Payouts>(this.baseUri + 'payout?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => d.data);
+			return Axios.get<Payouts>(this.baseUri + 'payout?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -351,7 +351,7 @@ export namespace MyNS {
 		 * @return {PayoutSummaryResponse} Success
 		 */
 		GetPayoutSummary(filter: string | null | undefined): Promise<PayoutSummaryResponse> {
-			return Axios.get<PayoutSummaryResponse>(this.baseUri + 'payout_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
+			return Axios.get<PayoutSummaryResponse>(this.baseUri + 'payout_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -369,7 +369,7 @@ export namespace MyNS {
 		 * @return {Transactions} Success
 		 */
 		GetTransactions(filter: string | null | undefined, sort: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Promise<Transactions> {
-			return Axios.get<Transactions>(this.baseUri + 'transaction?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => d.data);
+			return Axios.get<Transactions>(this.baseUri + 'transaction?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -379,7 +379,7 @@ export namespace MyNS {
 		 * @return {TransactionSummaryResponse} Success
 		 */
 		GetTransactionSummary(filter: string | null | undefined): Promise<TransactionSummaryResponse> {
-			return Axios.get<TransactionSummaryResponse>(this.baseUri + 'transaction_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => d.data);
+			return Axios.get<TransactionSummaryResponse>(this.baseUri + 'transaction_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -393,7 +393,7 @@ export namespace MyNS {
 		 * @return {SellerFundsSummaryResponse} Success
 		 */
 		GetSellerFundsSummary(): Promise<SellerFundsSummaryResponse> {
-			return Axios.get<SellerFundsSummaryResponse>(this.baseUri + 'seller_funds_summary', {}).then(d => d.data);
+			return Axios.get<SellerFundsSummaryResponse>(this.baseUri + 'seller_funds_summary', {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 

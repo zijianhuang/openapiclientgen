@@ -220,7 +220,7 @@ export namespace MyNS {
 		 * @return {PagedEligibleItemCollection} Success
 		 */
 		FindEligibleItems(limit: string | null | undefined, offset: string | null | undefined): Promise<PagedEligibleItemCollection> {
-			return this.http.get('find_eligible_items?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => d.json());
+			return this.http.get('find_eligible_items?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -230,7 +230,7 @@ export namespace MyNS {
 		 * @return {SendOfferToInterestedBuyersCollectionResponse} Success
 		 */
 		SendOfferToInterestedBuyers(requestBody: CreateOffersRequest): Promise<SendOfferToInterestedBuyersCollectionResponse> {
-			return this.http.post('send_offer_to_interested_buyers', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('send_offer_to_interested_buyers', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 

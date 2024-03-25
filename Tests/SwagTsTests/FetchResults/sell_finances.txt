@@ -326,7 +326,7 @@ export namespace MyNS {
 		 * @return {Payout} Success
 		 */
 		GetPayout(payout_Id: string): Promise<Payout> {
-			return fetch(this.baseUri + 'payout/' + (payout_Id == null ? '' : encodeURIComponent(payout_Id)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'payout/' + (payout_Id == null ? '' : encodeURIComponent(payout_Id)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -339,7 +339,7 @@ export namespace MyNS {
 		 * @return {Payouts} Success
 		 */
 		GetPayouts(filter: string | null | undefined, sort: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Promise<Payouts> {
-			return fetch(this.baseUri + 'payout?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'payout?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -349,7 +349,7 @@ export namespace MyNS {
 		 * @return {PayoutSummaryResponse} Success
 		 */
 		GetPayoutSummary(filter: string | null | undefined): Promise<PayoutSummaryResponse> {
-			return fetch(this.baseUri + 'payout_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'payout_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -367,7 +367,7 @@ export namespace MyNS {
 		 * @return {Transactions} Success
 		 */
 		GetTransactions(filter: string | null | undefined, sort: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Promise<Transactions> {
-			return fetch(this.baseUri + 'transaction?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'transaction?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -377,7 +377,7 @@ export namespace MyNS {
 		 * @return {TransactionSummaryResponse} Success
 		 */
 		GetTransactionSummary(filter: string | null | undefined): Promise<TransactionSummaryResponse> {
-			return fetch(this.baseUri + 'transaction_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'transaction_summary?filter=' + (filter == null ? '' : encodeURIComponent(filter)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -391,7 +391,7 @@ export namespace MyNS {
 		 * @return {SellerFundsSummaryResponse} Success
 		 */
 		GetSellerFundsSummary(): Promise<SellerFundsSummaryResponse> {
-			return fetch(this.baseUri + 'seller_funds_summary', { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'seller_funds_summary', { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 

@@ -329,7 +329,7 @@ export namespace MyNS {
 		 * @return {GetCustomerServiceMetricResponse} Success
 		 */
 		GetCustomerServiceMetric(customer_service_metric_type: string, evaluation_marketplace_id: string, evaluation_type: string): Promise<GetCustomerServiceMetricResponse> {
-			return fetch(this.baseUri + 'customer_service_metric/' + (customer_service_metric_type == null ? '' : encodeURIComponent(customer_service_metric_type)) + '/' + (evaluation_type == null ? '' : encodeURIComponent(evaluation_type)) + '&evaluation_marketplace_id=' + (evaluation_marketplace_id == null ? '' : encodeURIComponent(evaluation_marketplace_id)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'customer_service_metric/' + (customer_service_metric_type == null ? '' : encodeURIComponent(customer_service_metric_type)) + '/' + (evaluation_type == null ? '' : encodeURIComponent(evaluation_type)) + '&evaluation_marketplace_id=' + (evaluation_marketplace_id == null ? '' : encodeURIComponent(evaluation_marketplace_id)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -343,7 +343,7 @@ export namespace MyNS {
 		 * @return {FindSellerStandardsProfilesResponse} Success
 		 */
 		FindSellerStandardsProfiles(): Promise<FindSellerStandardsProfilesResponse> {
-			return fetch(this.baseUri + 'seller_standards_profile', { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'seller_standards_profile', { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -354,7 +354,7 @@ export namespace MyNS {
 		 * @return {StandardsProfile} Success
 		 */
 		GetSellerStandardsProfile(cycle: string, program: string): Promise<StandardsProfile> {
-			return fetch(this.baseUri + 'seller_standards_profile/' + (program == null ? '' : encodeURIComponent(program)) + '/' + (cycle == null ? '' : encodeURIComponent(cycle)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'seller_standards_profile/' + (program == null ? '' : encodeURIComponent(program)) + '/' + (cycle == null ? '' : encodeURIComponent(cycle)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -372,7 +372,7 @@ export namespace MyNS {
 		 * @return {Report} Success
 		 */
 		GetTrafficReport(dimension: string | null | undefined, filter: string | null | undefined, metric: string | null | undefined, sort: string | null | undefined): Promise<Report> {
-			return fetch(this.baseUri + 'traffic_report?dimension=' + (dimension == null ? '' : encodeURIComponent(dimension)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&metric=' + (metric == null ? '' : encodeURIComponent(metric)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'traffic_report?dimension=' + (dimension == null ? '' : encodeURIComponent(dimension)) + '&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&metric=' + (metric == null ? '' : encodeURIComponent(metric)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 

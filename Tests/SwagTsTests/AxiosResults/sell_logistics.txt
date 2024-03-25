@@ -432,7 +432,7 @@ export namespace MyNS {
 		 * @return {Shipment} Success
 		 */
 		GetShipment(shipmentId: string): Promise<Shipment> {
-			return Axios.get<Shipment>(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)), {}).then(d => d.data);
+			return Axios.get<Shipment>(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -452,7 +452,7 @@ export namespace MyNS {
 		 * @return {Shipment} Success
 		 */
 		CancelShipment(shipmentId: string): Promise<Shipment> {
-			return Axios.post<Shipment>(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/cancel', null, {}).then(d => d.data);
+			return Axios.post<Shipment>(this.baseUri + 'shipment/' + (shipmentId == null ? '' : encodeURIComponent(shipmentId)) + '/cancel', null, {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -477,7 +477,7 @@ export namespace MyNS {
 		 * @return {ShippingQuote} Success
 		 */
 		GetShippingQuote(shippingQuoteId: string): Promise<ShippingQuote> {
-			return Axios.get<ShippingQuote>(this.baseUri + 'shipping_quote/' + (shippingQuoteId == null ? '' : encodeURIComponent(shippingQuoteId)), {}).then(d => d.data);
+			return Axios.get<ShippingQuote>(this.baseUri + 'shipping_quote/' + (shippingQuoteId == null ? '' : encodeURIComponent(shippingQuoteId)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 

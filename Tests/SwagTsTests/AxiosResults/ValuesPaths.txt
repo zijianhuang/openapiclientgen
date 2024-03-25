@@ -10,7 +10,7 @@ export namespace MyNS {
 		 * @return {Array<string>} Success
 		 */
 		ValuesGet(): Promise<Array<string>> {
-			return Axios.get<Array<string>>(this.baseUri + 'api/Values', {}).then(d => d.data);
+			return Axios.get<Array<string>>(this.baseUri + 'api/Values', {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -18,7 +18,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		ValuesPost(requestBody: string): Promise<string> {
-			return Axios.post(this.baseUri + 'api/Values', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' }).then(d => d.data);
+			return Axios.post(this.baseUri + 'api/Values', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -27,7 +27,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		ValuesGetById(id: number): Promise<string> {
-			return Axios.get(this.baseUri + 'api/Values/' + id, { responseType: 'text' }).then(d => d.data);
+			return Axios.get(this.baseUri + 'api/Values/' + id, { responseType: 'text' }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**

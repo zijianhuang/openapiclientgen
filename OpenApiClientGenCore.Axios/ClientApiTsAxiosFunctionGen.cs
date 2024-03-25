@@ -119,7 +119,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {OptionsForString}).then(d => d.data);")); //todo: type cast is not really needed.
+					Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, {OptionsForString}).then(d => {{if (d.status<=204) return d.data); throw d;}});")); //todo: type cast is not really needed.
 					return;
 				}
 
@@ -127,11 +127,11 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {OptionsForString}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, null, {OptionsForString}).then(d => {{if (d.status<=204) return d.data); throw d;}});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForString}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForString}).then(d => {{if (d.status<=204) return d.data); throw d;}});"));
 					}
 
 					return;
@@ -195,7 +195,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}{returnTypeCast}({uriText}, {Options}).then(d => d.data);"));
+						Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}{returnTypeCast}({uriText}, {Options}).then(d => {{if (d.status<=204) return d.data); throw d;}});"));
 					}
 				}
 				else if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
@@ -215,11 +215,11 @@ namespace Fonlow.CodeDom.Web.Ts
 					{
 						if (RequestBodyCodeTypeReference == null) // no body
 						{
-							Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}{returnTypeCast}({uriText}, null, {Options}).then(d => d.data);"));
+							Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}{returnTypeCast}({uriText}, null, {Options}).then(d => {{if (d.status<=204) return d.data); throw d;}});"));
 						}
 						else
 						{
-							Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}{returnTypeCast}({uriText}, JSON.stringify(requestBody), {OptionsWithContent}).then(d => d.data);"));
+							Method.Statements.Add(new CodeSnippetStatement($"return Axios.{httpMethodName}{returnTypeCast}({uriText}, JSON.stringify(requestBody), {OptionsWithContent}).then(d => {{if (d.status<=204) return d.data); throw d;}});"));
 						}
 					}
 				}

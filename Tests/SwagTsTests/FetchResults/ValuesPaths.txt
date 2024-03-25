@@ -8,7 +8,7 @@ export namespace MyNS {
 		 * @return {Array<string>} Success
 		 */
 		ValuesGet(): Promise<Array<string>> {
-			return fetch(this.baseUri + 'api/Values', { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'api/Values', { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -16,7 +16,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		ValuesPost(requestBody: string): Promise<string> {
-			return fetch(this.baseUri + 'api/Values', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.text());
+			return fetch(this.baseUri + 'api/Values', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;});
 		}
 
 		/**
@@ -25,7 +25,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		ValuesGetById(id: number): Promise<string> {
-			return fetch(this.baseUri + 'api/Values/' + id, { method: 'get' }).then(d => d.text());
+			return fetch(this.baseUri + 'api/Values/' + id, { method: 'get' }).then(d => {if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;});
 		}
 
 		/**

@@ -1216,7 +1216,7 @@ export namespace MyNS {
 		 * @return {BulkCreateAdsByInventoryReferenceResponse} Success
 		 */
 		BulkCreateAdsByInventoryReference(campaign_id: string, requestBody: BulkCreateAdsByInventoryReferenceRequest): Promise<BulkCreateAdsByInventoryReferenceResponse> {
-			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1227,7 +1227,7 @@ export namespace MyNS {
 		 * @return {BulkAdResponse} Success
 		 */
 		BulkCreateAdsByListingId(campaign_id: string, requestBody: BulkCreateAdRequest): Promise<BulkAdResponse> {
-			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_create_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1238,7 +1238,7 @@ export namespace MyNS {
 		 * @return {BulkDeleteAdsByInventoryReferenceResponse} Success
 		 */
 		BulkDeleteAdsByInventoryReference(campaign_id: string, requestBody: BulkDeleteAdsByInventoryReferenceRequest): Promise<BulkDeleteAdsByInventoryReferenceResponse> {
-			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1249,7 +1249,7 @@ export namespace MyNS {
 		 * @return {BulkDeleteAdResponse} Success
 		 */
 		BulkDeleteAdsByListingId(campaign_id: string, requestBody: BulkDeleteAdRequest): Promise<BulkDeleteAdResponse> {
-			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_delete_ads_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1260,7 +1260,7 @@ export namespace MyNS {
 		 * @return {BulkCreateAdsByInventoryReferenceResponse} Success
 		 */
 		BulkUpdateAdsBidByInventoryReference(campaign_id: string, requestBody: BulkCreateAdsByInventoryReferenceRequest): Promise<BulkCreateAdsByInventoryReferenceResponse> {
-			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1271,7 +1271,7 @@ export namespace MyNS {
 		 * @return {BulkAdResponse} Success
 		 */
 		BulkUpdateAdsBidByListingId(campaign_id: string, requestBody: BulkCreateAdRequest): Promise<BulkAdResponse> {
-			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/bulk_update_ads_bid_by_listing_id', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1284,7 +1284,7 @@ export namespace MyNS {
 		 * @return {AdPagedCollection} Success
 		 */
 		GetAds(campaign_id: string, limit: string | null | undefined, listing_ids: string, offset: string | null | undefined): Promise<AdPagedCollection> {
-			return this.http.get('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&listing_ids=' + (listing_ids == null ? '' : encodeURIComponent(listing_ids)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => d.json());
+			return this.http.get('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&listing_ids=' + (listing_ids == null ? '' : encodeURIComponent(listing_ids)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1317,7 +1317,7 @@ export namespace MyNS {
 		 * @return {Ad} Success
 		 */
 		GetAd(ad_id: string, campaign_id: string): Promise<Ad> {
-			return this.http.get('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)), {}).then(d => d.json());
+			return this.http.get('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/ad/' + (ad_id == null ? '' : encodeURIComponent(ad_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1339,7 +1339,7 @@ export namespace MyNS {
 		 * @return {AdIds} Success
 		 */
 		DeleteAdsByInventoryReference(campaign_id: string, requestBody: DeleteAdsByInventoryReferenceRequest): Promise<AdIds> {
-			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/delete_ads_by_inventory_reference', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1351,7 +1351,7 @@ export namespace MyNS {
 		 * @return {Ads} Success
 		 */
 		GetAdsByInventoryReference(campaign_id: string, inventory_reference_id: string, inventory_reference_type: string): Promise<Ads> {
-			return this.http.get('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/get_ads_by_inventory_reference&inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)), {}).then(d => d.json());
+			return this.http.get('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/get_ads_by_inventory_reference&inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1395,7 +1395,7 @@ export namespace MyNS {
 		 * @return {CampaignPagedCollection} Success
 		 */
 		GetCampaigns(campaign_name: string | null | undefined, campaign_status: string | null | undefined, end_date_range: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, start_date_range: string | null | undefined): Promise<CampaignPagedCollection> {
-			return this.http.get('ad_campaign?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)) + '&campaign_status=' + (campaign_status == null ? '' : encodeURIComponent(campaign_status)) + '&end_date_range=' + (end_date_range == null ? '' : encodeURIComponent(end_date_range)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&start_date_range=' + (start_date_range == null ? '' : encodeURIComponent(start_date_range)), {}).then(d => d.json());
+			return this.http.get('ad_campaign?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)) + '&campaign_status=' + (campaign_status == null ? '' : encodeURIComponent(campaign_status)) + '&end_date_range=' + (end_date_range == null ? '' : encodeURIComponent(end_date_range)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&start_date_range=' + (start_date_range == null ? '' : encodeURIComponent(start_date_range)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1415,7 +1415,7 @@ export namespace MyNS {
 		 * @return {Campaign} Success
 		 */
 		GetCampaign(campaign_id: string): Promise<Campaign> {
-			return this.http.get('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)), {}).then(d => d.json());
+			return this.http.get('ad_campaign/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1447,7 +1447,7 @@ export namespace MyNS {
 		 * @return {Campaigns} Success
 		 */
 		FindCampaignByAdReference(inventory_reference_id: string | null | undefined, inventory_reference_type: string | null | undefined, listing_id: string | null | undefined): Promise<Campaigns> {
-			return this.http.get('ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)), {}).then(d => d.json());
+			return this.http.get('ad_campaign/find_campaign_by_ad_reference?inventory_reference_id=' + (inventory_reference_id == null ? '' : encodeURIComponent(inventory_reference_id)) + '&inventory_reference_type=' + (inventory_reference_type == null ? '' : encodeURIComponent(inventory_reference_type)) + '&listing_id=' + (listing_id == null ? '' : encodeURIComponent(listing_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1457,7 +1457,7 @@ export namespace MyNS {
 		 * @return {Campaign} Success
 		 */
 		GetCampaignByName(campaign_name: string): Promise<Campaign> {
-			return this.http.get('ad_campaign/get_campaign_by_name?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)), {}).then(d => d.json());
+			return this.http.get('ad_campaign/get_campaign_by_name?campaign_name=' + (campaign_name == null ? '' : encodeURIComponent(campaign_name)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1519,7 +1519,7 @@ export namespace MyNS {
 		 * @return {ReportMetadatas} Success
 		 */
 		GetReportMetadata(): Promise<ReportMetadatas> {
-			return this.http.get('ad_report_metadata', {}).then(d => d.json());
+			return this.http.get('ad_report_metadata', {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1529,7 +1529,7 @@ export namespace MyNS {
 		 * @return {ReportMetadata} Success
 		 */
 		GetReportMetadataForReportType(report_type: string): Promise<ReportMetadata> {
-			return this.http.get('ad_report_metadata/' + (report_type == null ? '' : encodeURIComponent(report_type)), {}).then(d => d.json());
+			return this.http.get('ad_report_metadata/' + (report_type == null ? '' : encodeURIComponent(report_type)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -1547,7 +1547,7 @@ export namespace MyNS {
 		 * @return {ReportTaskPagedCollection} Success
 		 */
 		GetReportTasks(limit: string | null | undefined, offset: string | null | undefined, report_task_statuses: string | null | undefined): Promise<ReportTaskPagedCollection> {
-			return this.http.get('ad_report_task?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&report_task_statuses=' + (report_task_statuses == null ? '' : encodeURIComponent(report_task_statuses)), {}).then(d => d.json());
+			return this.http.get('ad_report_task?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&report_task_statuses=' + (report_task_statuses == null ? '' : encodeURIComponent(report_task_statuses)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1567,7 +1567,7 @@ export namespace MyNS {
 		 * @return {ReportTask} Success
 		 */
 		GetReportTask(report_task_id: string): Promise<ReportTask> {
-			return this.http.get('ad_report_task/' + (report_task_id == null ? '' : encodeURIComponent(report_task_id)), {}).then(d => d.json());
+			return this.http.get('ad_report_task/' + (report_task_id == null ? '' : encodeURIComponent(report_task_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1603,7 +1603,7 @@ export namespace MyNS {
 		 * @return {ItemPriceMarkdown} Success
 		 */
 		GetItemPriceMarkdownPromotion(promotion_id: string): Promise<ItemPriceMarkdown> {
-			return this.http.get('item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), {}).then(d => d.json());
+			return this.http.get('item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1614,7 +1614,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		UpdateItemPriceMarkdownPromotion(promotion_id: string, requestBody: ItemPriceMarkdown): Promise<string> {
-			return this.http.put('item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.text());
+			return this.http.put('item_price_markdown/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.text(); throw d;});
 		}
 
 		/**
@@ -1650,7 +1650,7 @@ export namespace MyNS {
 		 * @return {ItemPromotionResponse} Success
 		 */
 		GetItemPromotion(promotion_id: string): Promise<ItemPromotionResponse> {
-			return this.http.get('item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), {}).then(d => d.json());
+			return this.http.get('item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1661,7 +1661,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		UpdateItemPromotion(promotion_id: string, requestBody: ItemPromotion): Promise<BaseResponse> {
-			return this.http.put('item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.put('item_promotion/' + (promotion_id == null ? '' : encodeURIComponent(promotion_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1708,7 +1708,7 @@ export namespace MyNS {
 		 * @return {PromotionsPagedCollection} Success
 		 */
 		GetPromotions(limit: string | null | undefined, marketplace_id: string, offset: string | null | undefined, promotion_status: string | null | undefined, promotion_type: string | null | undefined, q: string | null | undefined, sort: string | null | undefined): Promise<PromotionsPagedCollection> {
-			return this.http.get('promotion?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {}).then(d => d.json());
+			return this.http.get('promotion?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -1749,7 +1749,7 @@ export namespace MyNS {
 		 * @return {PromotionsReportPagedCollection} Success
 		 */
 		GetPromotionReports(limit: string | null | undefined, marketplace_id: string, offset: string | null | undefined, promotion_status: string | null | undefined, promotion_type: string | null | undefined, q: string | null | undefined): Promise<PromotionsReportPagedCollection> {
-			return this.http.get('promotion_report?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), {}).then(d => d.json());
+			return this.http.get('promotion_report?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)) + '&promotion_status=' + (promotion_status == null ? '' : encodeURIComponent(promotion_status)) + '&promotion_type=' + (promotion_type == null ? '' : encodeURIComponent(promotion_type)) + '&q=' + (q == null ? '' : encodeURIComponent(q)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -1765,7 +1765,7 @@ export namespace MyNS {
 		 * @return {SummaryReportResponse} Success
 		 */
 		GetPromotionSummaryReport(marketplace_id: string): Promise<SummaryReportResponse> {
-			return this.http.get('promotion_summary_report?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => d.json());
+			return this.http.get('promotion_summary_report?marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)), {}).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 

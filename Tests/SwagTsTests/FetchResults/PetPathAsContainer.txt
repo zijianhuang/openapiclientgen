@@ -173,7 +173,7 @@ export namespace MyNS {
 		 * @return {Pet} successful operation
 		 */
 		GetByPetId(petId: string): Promise<Pet> {
-			return fetch(this.baseUri + 'pet/' + petId, { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'pet/' + petId, { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -204,7 +204,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		GetByStatus(status: Array<PetStatus>): Promise<Array<Pet>> {
-			return fetch(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -220,7 +220,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} successful operation
 		 */
 		GetByTags(tags: Array<string>): Promise<Array<Pet>> {
-			return fetch(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -235,7 +235,7 @@ export namespace MyNS {
 		 * @return {{[id: string]: number }} successful operation
 		 */
 		Get(): Promise<{[id: string]: number }> {
-			return fetch(this.baseUri + 'store/inventory', { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'store/inventory', { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -250,7 +250,7 @@ export namespace MyNS {
 		 * @return {Order} successful operation
 		 */
 		Post(requestBody: Order): Promise<Order> {
-			return fetch(this.baseUri + 'store/order', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => d.json());
+			return fetch(this.baseUri + 'store/order', { method: 'post', headers: { 'Content-Type': 'application/json;charset=UTF-8' }, body: JSON.stringify(requestBody) }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 	}
 
@@ -266,7 +266,7 @@ export namespace MyNS {
 		 * @return {Order} successful operation
 		 */
 		GetByOrderId(orderId: string): Promise<Order> {
-			return fetch(this.baseUri + 'store/order/' + orderId, { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'store/order/' + orderId, { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -308,7 +308,7 @@ export namespace MyNS {
 		 * @return {User} successful operation
 		 */
 		GetByUsername(username: string): Promise<User> {
-			return fetch(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { method: 'get' }).then(d => d.json());
+			return fetch(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { method: 'get' }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -377,7 +377,7 @@ export namespace MyNS {
 		 * @return {string} successful operation
 		 */
 		GetByUsernameAndPassword(username: string, password: string): Promise<string> {
-			return fetch(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { method: 'get' }).then(d => d.text());
+			return fetch(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { method: 'get' }).then(d => {if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;});
 		}
 	}
 

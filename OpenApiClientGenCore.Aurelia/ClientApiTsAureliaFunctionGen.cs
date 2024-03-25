@@ -119,7 +119,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {OptionsForString}).then(d => d.text());")); //todo: type cast is not really needed.
+					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {OptionsForString}).then(d => {{if (d.status<=204) return d.text(); throw d;}});")); //todo: type cast is not really needed.
 					return;
 				}
 
@@ -127,11 +127,11 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {OptionsForString}).then(d => d.text());"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {OptionsForString}).then(d => {{if (d.status<=204) return d.text(); throw d;}});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForString}).then(d => d.text());"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForString}).then(d => {{if (d.status<=204) return d.text(); throw d;}});"));
 					}
 
 					return;
@@ -141,7 +141,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (httpMethodName == "get" || httpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {OptionsForResponse}).then(d => d.json());"));
+					Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {OptionsForResponse}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
 					return;
 				}
 
@@ -149,11 +149,11 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {OptionsForResponse}).then(d => d.json());"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {OptionsForResponse}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse}).then(d => d.json());"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
 					}
 
 					return;
@@ -195,7 +195,7 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {Options}).then(d => d.json());"));
+						Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, {Options}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
 					}
 				}
 				else if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
@@ -215,11 +215,11 @@ namespace Fonlow.CodeDom.Web.Ts
 					{
 						if (RequestBodyCodeTypeReference == null) // no body
 						{
-							Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {Options}).then(d => d.json());"));
+							Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, null, {Options}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
 						}
 						else
 						{
-							Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {OptionsWithContent}).then(d => d.json());"));
+							Method.Statements.Add(new CodeSnippetStatement($"return this.http.{httpMethodName}({uriText}, JSON.stringify(requestBody), {OptionsWithContent}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
 						}
 					}
 				}

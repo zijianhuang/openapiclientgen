@@ -1483,7 +1483,7 @@ export namespace MyNS {
 		 * @return {InventoryLocationResponse} Success
 		 */
 		GetInventoryLocation(merchantLocationKey: string): Promise<InventoryLocationResponse> {
-			return Axios.get<InventoryLocationResponse>(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)), {}).then(d => d.data);
+			return Axios.get<InventoryLocationResponse>(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1514,7 +1514,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		DisableInventoryLocation(merchantLocationKey: string): Promise<string> {
-			return Axios.post(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/disable', null, { responseType: 'text' }).then(d => d.data);
+			return Axios.post(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/disable', null, { responseType: 'text' }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1524,7 +1524,7 @@ export namespace MyNS {
 		 * @return {string} Success
 		 */
 		EnableInventoryLocation(merchantLocationKey: string): Promise<string> {
-			return Axios.post(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/enable', null, { responseType: 'text' }).then(d => d.data);
+			return Axios.post(this.baseUri + 'location/' + (merchantLocationKey == null ? '' : encodeURIComponent(merchantLocationKey)) + '/enable', null, { responseType: 'text' }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1535,7 +1535,7 @@ export namespace MyNS {
 		 * @return {LocationResponse} Success
 		 */
 		GetInventoryLocations(limit: string | null | undefined, offset: string | null | undefined): Promise<LocationResponse> {
-			return Axios.get<LocationResponse>(this.baseUri + 'location?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => d.data);
+			return Axios.get<LocationResponse>(this.baseUri + 'location?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1561,7 +1561,7 @@ export namespace MyNS {
 		 * @return {InventoryItemWithSkuLocaleGroupid} Success
 		 */
 		GetInventoryItem(sku: string): Promise<InventoryItemWithSkuLocaleGroupid> {
-			return Axios.get<InventoryItemWithSkuLocaleGroupid>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), {}).then(d => d.data);
+			return Axios.get<InventoryItemWithSkuLocaleGroupid>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1572,7 +1572,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		CreateOrReplaceInventoryItem(sku: string, requestBody: InventoryItem): Promise<BaseResponse> {
-			return Axios.put<BaseResponse>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.put<BaseResponse>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1593,7 +1593,7 @@ export namespace MyNS {
 		 * @return {InventoryItems} Success
 		 */
 		GetInventoryItems(limit: string | null | undefined, offset: string | null | undefined): Promise<InventoryItems> {
-			return Axios.get<InventoryItems>(this.baseUri + 'inventory_item?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => d.data);
+			return Axios.get<InventoryItems>(this.baseUri + 'inventory_item?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1603,7 +1603,7 @@ export namespace MyNS {
 		 * @return {BulkPriceQuantityResponse} Success
 		 */
 		BulkUpdatePriceQuantity(requestBody: BulkPriceQuantity): Promise<BulkPriceQuantityResponse> {
-			return Axios.post<BulkPriceQuantityResponse>(this.baseUri + 'bulk_update_price_quantity', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkPriceQuantityResponse>(this.baseUri + 'bulk_update_price_quantity', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1613,7 +1613,7 @@ export namespace MyNS {
 		 * @return {BulkInventoryItemResponse} Success
 		 */
 		BulkCreateOrReplaceInventoryItem(requestBody: BulkInventoryItem): Promise<BulkInventoryItemResponse> {
-			return Axios.post<BulkInventoryItemResponse>(this.baseUri + 'bulk_create_or_replace_inventory_item', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkInventoryItemResponse>(this.baseUri + 'bulk_create_or_replace_inventory_item', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1623,7 +1623,7 @@ export namespace MyNS {
 		 * @return {BulkGetInventoryItemResponse} Success
 		 */
 		BulkGetInventoryItem(requestBody: BulkGetInventoryItem): Promise<BulkGetInventoryItemResponse> {
-			return Axios.post<BulkGetInventoryItemResponse>(this.baseUri + 'bulk_get_inventory_item', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkGetInventoryItemResponse>(this.baseUri + 'bulk_get_inventory_item', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -1638,7 +1638,7 @@ export namespace MyNS {
 		 * @return {Compatibility} Success
 		 */
 		GetProductCompatibility(sku: string): Promise<Compatibility> {
-			return Axios.get<Compatibility>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', {}).then(d => d.data);
+			return Axios.get<Compatibility>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1649,7 +1649,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		CreateOrReplaceProductCompatibility(sku: string, requestBody: Compatibility): Promise<BaseResponse> {
-			return Axios.put<BaseResponse>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.put<BaseResponse>(this.baseUri + 'inventory_item/' + (sku == null ? '' : encodeURIComponent(sku)) + '/product_compatibility', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1678,7 +1678,7 @@ export namespace MyNS {
 		 * @return {Offers} Success
 		 */
 		GetOffers(sku: string | null | undefined, marketplace_id: string | null | undefined, format: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined): Promise<Offers> {
-			return Axios.get<Offers>(this.baseUri + 'offer?sku=' + (sku == null ? '' : encodeURIComponent(sku)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&format=' + (format == null ? '' : encodeURIComponent(format)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => d.data);
+			return Axios.get<Offers>(this.baseUri + 'offer?sku=' + (sku == null ? '' : encodeURIComponent(sku)) + '&marketplace_id=' + (marketplace_id == null ? '' : encodeURIComponent(marketplace_id)) + '&format=' + (format == null ? '' : encodeURIComponent(format)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 		 * @return {EbayOfferDetailsWithAll} Success
 		 */
 		GetOffer(offerId: string): Promise<EbayOfferDetailsWithAll> {
-			return Axios.get<EbayOfferDetailsWithAll>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), {}).then(d => d.data);
+			return Axios.get<EbayOfferDetailsWithAll>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1709,7 +1709,7 @@ export namespace MyNS {
 		 * @return {OfferResponse} Success
 		 */
 		UpdateOffer(offerId: string, requestBody: EbayOfferDetailsWithId): Promise<OfferResponse> {
-			return Axios.put<OfferResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.put<OfferResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1729,7 +1729,7 @@ export namespace MyNS {
 		 * @return {PublishResponse} Success
 		 */
 		PublishOffer(offerId: string): Promise<PublishResponse> {
-			return Axios.post<PublishResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/publish/', null, {}).then(d => d.data);
+			return Axios.post<PublishResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/publish/', null, {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1739,7 +1739,7 @@ export namespace MyNS {
 		 * @return {PublishResponse} Success
 		 */
 		PublishOfferByInventoryItemGroup(requestBody: PublishByInventoryItemGroupRequest): Promise<PublishResponse> {
-			return Axios.post<PublishResponse>(this.baseUri + 'offer/publish_by_inventory_item_group/', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<PublishResponse>(this.baseUri + 'offer/publish_by_inventory_item_group/', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1759,7 +1759,7 @@ export namespace MyNS {
 		 * @return {FeesSummaryResponse} Success
 		 */
 		GetListingFees(requestBody: OfferKeysWithId): Promise<FeesSummaryResponse> {
-			return Axios.post<FeesSummaryResponse>(this.baseUri + 'offer/get_listing_fees', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<FeesSummaryResponse>(this.baseUri + 'offer/get_listing_fees', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1769,7 +1769,7 @@ export namespace MyNS {
 		 * @return {BulkOfferResponse} Success
 		 */
 		BulkCreateOffer(requestBody: BulkEbayOfferDetailsWithKeys): Promise<BulkOfferResponse> {
-			return Axios.post<BulkOfferResponse>(this.baseUri + 'bulk_create_offer', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkOfferResponse>(this.baseUri + 'bulk_create_offer', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1779,7 +1779,7 @@ export namespace MyNS {
 		 * @return {BulkPublishResponse} Success
 		 */
 		BulkPublishOffer(requestBody: BulkOffer): Promise<BulkPublishResponse> {
-			return Axios.post<BulkPublishResponse>(this.baseUri + 'bulk_publish_offer', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkPublishResponse>(this.baseUri + 'bulk_publish_offer', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1789,7 +1789,7 @@ export namespace MyNS {
 		 * @return {WithdrawResponse} Success
 		 */
 		WithdrawOffer(offerId: string): Promise<WithdrawResponse> {
-			return Axios.post<WithdrawResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/withdraw', null, {}).then(d => d.data);
+			return Axios.post<WithdrawResponse>(this.baseUri + 'offer/' + (offerId == null ? '' : encodeURIComponent(offerId)) + '/withdraw', null, {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
@@ -1804,7 +1804,7 @@ export namespace MyNS {
 		 * @return {InventoryItemGroup} Success
 		 */
 		GetInventoryItemGroup(inventoryItemGroupKey: string): Promise<InventoryItemGroup> {
-			return Axios.get<InventoryItemGroup>(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), {}).then(d => d.data);
+			return Axios.get<InventoryItemGroup>(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), {}).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1815,7 +1815,7 @@ export namespace MyNS {
 		 * @return {BaseResponse} Success
 		 */
 		CreateOrReplaceInventoryItemGroup(inventoryItemGroupKey: string, requestBody: InventoryItemGroup): Promise<BaseResponse> {
-			return Axios.put<BaseResponse>(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.put<BaseResponse>(this.baseUri + 'inventory_item_group/' + (inventoryItemGroupKey == null ? '' : encodeURIComponent(inventoryItemGroupKey)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 
 		/**
@@ -1840,7 +1840,7 @@ export namespace MyNS {
 		 * @return {BulkMigrateListingResponse} Success
 		 */
 		BulkMigrateListing(requestBody: BulkMigrateListing): Promise<BulkMigrateListingResponse> {
-			return Axios.post<BulkMigrateListingResponse>(this.baseUri + 'bulk_migrate_listing', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
+			return Axios.post<BulkMigrateListingResponse>(this.baseUri + 'bulk_migrate_listing', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
 		}
 	}
 
