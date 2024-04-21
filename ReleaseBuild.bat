@@ -1,2 +1,11 @@
-"C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MsBuild.exe" OpenApiClientGen.msbuild  /p:DebugSymbols=false /p:DebugType=None  /p:AllowedReferenceRelatedFileExtensions=none 
+set vsProDir=C:\Program Files\Microsoft Visual Studio\2022\Professional\
+set vsCommunityDir=C:\Program Files\Microsoft Visual Studio\2022\Community\
+echo %vsProPath%
+if exist "%vsProDir%" (
+	set msBuildPath=%vsProDir%MSBuild\Current\Bin\MsBuild.exe
+) else (
+	set msBuildPath=%vsCommunityDirh%MSBuild\Current\Bin\MsBuild.exe
+)
+
+"%msBuildPath%" OpenApiClientGen.msbuild  /p:DebugSymbols=false /p:DebugType=None  /p:AllowedReferenceRelatedFileExtensions=none 
 pause
