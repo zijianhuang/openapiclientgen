@@ -1,184 +1,93 @@
 ///<reference path="HttpClient.ts" />
 namespace My_Pet_Client {
+	export interface Address {
+		city?: string | null;
+		state?: string | null;
+		street?: string | null;
+		zip?: string | null;
+	}
+
 	export interface ApiResponse {
 
 		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
-		type?: string | null;
 		message?: string | null;
+		type?: string | null;
 	}
-
-
-	/** A representation of a cat */
-	export interface Cat extends Pet {
-
-		/**
-		 * The measured skill for hunting
-		 * Required
-		 */
-		huntingSkill: CatHuntingSkill;
-	}
-
-	export enum CatHuntingSkill { clueless = 0, lazy = 1, adventurous = 2, aggressive = 3 }
 
 	export interface Category {
 
-		/** Category ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
-
-		/**
-		 * Category name
-		 * Min length: 1
-		 */
 		name?: string | null;
-
-		/** Test Sub Category */
-		sub?: CategorySub;
 	}
 
-	export interface CategorySub {
+	export interface Customer {
+		address?: Array<Address>;
 
-		/** Dumb Property */
-		prop1?: string | null;
-	}
-
-
-	/** A representation of a dog */
-	export interface Dog extends Pet {
-
-		/**
-		 * The size of the pack the dog is from
-		 * Required
-		 * Minimum: 1
-		 */
-		packSize: number;
-	}
-
-
-	/** A representation of a honey bee */
-	export interface HoneyBee extends Pet {
-
-		/**
-		 * Average amount of honey produced per day in ounces
-		 * Required
-		 * Type: double
-		 */
-		honeyPerDay: number;
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+		username?: string | null;
 	}
 
 	export interface Order {
+		complete?: boolean | null;
 
-		/** Order ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
 
-		/** Pet ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		petId?: string | null;
 
-		/** Minimum: 1 */
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quantity?: number | null;
-
-		/** Estimated ship date */
 		shipDate?: Date | null;
 
 		/** Order Status */
 		status?: OrderStatus | null;
-
-		/** Indicates whenever order was completed or not */
-		complete?: boolean | null;
-
-		/** Unique Request Id */
-		requestId?: string | null;
 	}
 
 	export enum OrderStatus { placed = 0, approved = 1, delivered = 2 }
 
 	export interface Pet {
-
-		/** Pet ID */
-		id?: string | null;
-
-		/** Categories this pet belongs to */
 		category?: Category;
 
-		/**
-		 * The name given to a pet
-		 * Required
-		 */
-		name: string;
-
-		/**
-		 * The list of URL to a cute photos featuring pet
-		 * Required
-		 * Maximum items: 20
-		 */
-		photoUrls: Array<string>;
-		friend?: Pet;
-
-		/**
-		 * Tags attached to the pet
-		 * Minimum items: 1
-		 */
-		tags?: Array<Tag>;
-
-		/** Pet status in the store */
-		status?: PetStatus | null;
-
-		/** Type of a pet */
-		petType?: string | null;
-	}
-
-	export interface Tag {
-
-		/** Tag ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
 
-		/**
-		 * Tag name
-		 * Min length: 1
-		 */
-		name?: string | null;
+		/** Required */
+		name: string;
+
+		/** Required */
+		photoUrls: Array<string>;
+
+		/** pet status in the store */
+		status?: PetStatus | null;
+		tags?: Array<Tag>;
 	}
 
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
-	export interface User {
+	export interface Tag {
 
 		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
-		pet?: Pet;
+		name?: string | null;
+	}
 
-		/**
-		 * User supplied username
-		 * Min length: 4
-		 */
+	export interface User {
+		email?: string | null;
+		firstName?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+		lastName?: string | null;
+		password?: string | null;
+		phone?: string | null;
 		username?: string | null;
 
 		/**
-		 * User first name
-		 * Min length: 1
-		 */
-		firstName?: string | null;
-
-		/**
-		 * User last name
-		 * Min length: 1
-		 */
-		lastName?: string | null;
-
-		/** User email address */
-		email?: string | null;
-
-		/**
-		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
-		 * Min length: 8
-		 */
-		password?: string | null;
-
-		/** User phone number in international format */
-		phone?: string | null;
-
-		/**
-		 * User status
+		 * User Status
 		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userStatus?: number | null;
@@ -190,23 +99,113 @@ namespace My_Pet_Client {
 
 		/**
 		 * Add a new pet to the store
-		 * Add new pet to the store inventory.
+		 * Add a new pet to the store
 		 * Post pet
-		 * @param {Pet} requestBody Pet object that needs to be added to the store
-		 * @return {void} 
+		 * @param {Pet} requestBody Create a new pet in the store
+		 * @return {Pet} Successful operation
 		 */
-		AddPet(callback: (data : void) => any, requestBody: Pet, headersHandler?: () => {[header: string]: string}) {
+		AddPet(callback: (data : Pet) => any, requestBody: Pet, headersHandler?: () => {[header: string]: string}) {
 			this.httpClient.post(this.baseUri + 'pet', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
 		}
 
 		/**
-		 * Update an existing pet
-		 * Put pet
-		 * @param {Pet} requestBody Pet object that needs to be added to the store
+		 * Create user
+		 * This can only be done by the logged in user.
+		 * Post user
+		 * @param {User} requestBody Created user object
 		 * @return {void} 
 		 */
-		UpdatePet(callback: (data : void) => any, requestBody: Pet, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.put(this.baseUri + 'pet', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		CreateUser(callback: (data : void) => any, requestBody: User, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.post(this.baseUri + 'user', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		}
+
+		/**
+		 * Creates list of users with given input array
+		 * Creates list of users with given input array
+		 * Post user/createWithList
+		 * @return {User} Successful operation
+		 */
+		CreateUsersWithListInput(callback: (data : User) => any, requestBody: Array<User>, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.post(this.baseUri + 'user/createWithList', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		}
+
+		/**
+		 * Delete purchase order by ID
+		 * For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
+		 * Delete store/order/{orderId}
+		 * @param {string} orderId ID of the order that needs to be deleted
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @return {void} 
+		 */
+		DeleteOrder(orderId: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.delete(this.baseUri + 'store/order/' + orderId, callback, this.error, this.statusCode, headersHandler);
+		}
+
+		/**
+		 * Deletes a pet
+		 * delete a pet
+		 * Delete pet/{petId}
+		 * @param {string} petId Pet id to delete
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @return {void} 
+		 */
+		DeletePet(petId: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode, headersHandler);
+		}
+
+		/**
+		 * Delete user
+		 * This can only be done by the logged in user.
+		 * Delete user/{username}
+		 * @param {string} username The name that needs to be deleted
+		 * @return {void} 
+		 */
+		DeleteUser(username: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), callback, this.error, this.statusCode, headersHandler);
+		}
+
+		/**
+		 * Finds Pets by status
+		 * Multiple status values can be provided with comma separated strings
+		 * Get pet/findByStatus
+		 * @param {PetStatus} status Status values that need to be considered for filter
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByStatus(status: PetStatus | null | undefined, callback: (data : Array<Pet>) => any, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.get(this.baseUri + 'pet/findByStatus?status=' + status, callback, this.error, this.statusCode, headersHandler);
+		}
+
+		/**
+		 * Finds Pets by tags
+		 * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+		 * Get pet/findByTags
+		 * @param {Array<string>} tags Tags to filter by
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByTags(tags: Array<string> | null | undefined, callback: (data : Array<Pet>) => any, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.get(this.baseUri + 'pet/findByTags?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&'), callback, this.error, this.statusCode, headersHandler);
+		}
+
+		/**
+		 * Returns pet inventories by status
+		 * Returns a map of status codes to quantities
+		 * Get store/inventory
+		 * @return {{[id: string]: number }} successful operation
+		 */
+		GetInventory(callback: (data : {[id: string]: number }) => any, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.get(this.baseUri + 'store/inventory', callback, this.error, this.statusCode, headersHandler);
+		}
+
+		/**
+		 * Find purchase order by ID
+		 * For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
+		 * Get store/order/{orderId}
+		 * @param {string} orderId ID of order that needs to be fetched
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @return {Order} successful operation
+		 */
+		GetOrderById(orderId: string, callback: (data : Order) => any, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.get(this.baseUri + 'store/order/' + orderId, callback, this.error, this.statusCode, headersHandler);
 		}
 
 		/**
@@ -222,95 +221,6 @@ namespace My_Pet_Client {
 		}
 
 		/**
-		 * Deletes a pet
-		 * Delete pet/{petId}
-		 * @param {string} petId Pet id to delete
-		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-		 * @return {void} 
-		 */
-		DeletePet(petId: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode, headersHandler);
-		}
-
-		/**
-		 * Finds Pets by status
-		 * Multiple status values can be provided with comma separated strings
-		 * Get pet/findByStatus
-		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
-		 *     Minimum items: 1    Maximum items: 3
-		 * @return {Array<Pet>} successful operation
-		 */
-		FindPetsByStatus(status: Array<PetStatus>, callback: (data : Array<Pet>) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), callback, this.error, this.statusCode, headersHandler);
-		}
-
-		/**
-		 * Finds Pets by tags
-		 * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
-		 * Get pet/findByTags
-		 * @param {Array<string>} tags Tags to filter by
-		 * @return {Array<Pet>} successful operation
-		 */
-		FindPetsByTags(tags: Array<string>, callback: (data : Array<Pet>) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), callback, this.error, this.statusCode, headersHandler);
-		}
-
-		/**
-		 * Returns pet inventories by status
-		 * Returns a map of status codes to quantities
-		 * Get store/inventory
-		 * @return {{[id: string]: number }} successful operation
-		 */
-		GetInventory(callback: (data : {[id: string]: number }) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'store/inventory', callback, this.error, this.statusCode, headersHandler);
-		}
-
-		/**
-		 * Place an order for a pet
-		 * Post store/order
-		 * @param {Order} requestBody order placed for purchasing the pet
-		 * @return {Order} successful operation
-		 */
-		PlaceOrder(callback: (data : Order) => any, requestBody: Order, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.post(this.baseUri + 'store/order', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
-		}
-
-		/**
-		 * Find purchase order by ID
-		 * For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
-		 * Get store/order/{orderId}
-		 * @param {string} orderId ID of pet that needs to be fetched
-		 *     Minimum: 1    Maximum: 5
-		 * @return {Order} successful operation
-		 */
-		GetOrderById(orderId: string, callback: (data : Order) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.get(this.baseUri + 'store/order/' + orderId, callback, this.error, this.statusCode, headersHandler);
-		}
-
-		/**
-		 * Delete purchase order by ID
-		 * For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
-		 * Delete store/order/{orderId}
-		 * @param {string} orderId ID of the order that needs to be deleted
-		 *     Minimum: 1
-		 * @return {void} 
-		 */
-		DeleteOrder(orderId: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), callback, this.error, this.statusCode, headersHandler);
-		}
-
-		/**
-		 * Create user
-		 * This can only be done by the logged in user.
-		 * Post user
-		 * @param {User} requestBody Created user object
-		 * @return {void} 
-		 */
-		CreateUser(callback: (data : void) => any, requestBody: User, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.post(this.baseUri + 'user', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
-		}
-
-		/**
 		 * Get user by user name
 		 * Get user/{username}
 		 * @param {string} username The name that needs to be fetched. Use user1 for testing. 
@@ -321,56 +231,13 @@ namespace My_Pet_Client {
 		}
 
 		/**
-		 * Updated user
-		 * This can only be done by the logged in user.
-		 * Put user/{username}
-		 * @param {string} username name that need to be deleted
-		 * @param {User} requestBody Updated user object
-		 * @return {void} 
-		 */
-		UpdateUser(username: string, callback: (data : void) => any, requestBody: User, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
-		}
-
-		/**
-		 * Delete user
-		 * This can only be done by the logged in user.
-		 * Delete user/{username}
-		 * @param {string} username The name that needs to be deleted
-		 * @return {void} 
-		 */
-		DeleteUser(username: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), callback, this.error, this.statusCode, headersHandler);
-		}
-
-		/**
-		 * Creates list of users with given input array
-		 * Post user/createWithArray
-		 * @param {Array<User>} requestBody List of user object
-		 * @return {void} 
-		 */
-		CreateUsersWithArrayInput(callback: (data : void) => any, requestBody: Array<User>, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.post(this.baseUri + 'user/createWithArray', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
-		}
-
-		/**
-		 * Creates list of users with given input array
-		 * Post user/createWithList
-		 * @param {Array<User>} requestBody List of user object
-		 * @return {void} 
-		 */
-		CreateUsersWithListInput(callback: (data : void) => any, requestBody: Array<User>, headersHandler?: () => {[header: string]: string}) {
-			this.httpClient.post(this.baseUri + 'user/createWithList', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
-		}
-
-		/**
 		 * Logs user into the system
 		 * Get user/login
 		 * @param {string} username The user name for login
 		 * @param {string} password The password for login in clear text
 		 * @return {string} successful operation
 		 */
-		LoginUser(username: string, password: string, callback: (data : string) => any, headersHandler?: () => {[header: string]: string}) {
+		LoginUser(username: string | null | undefined, password: string | null | undefined, callback: (data : string) => any, headersHandler?: () => {[header: string]: string}) {
 			this.httpClient.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), callback, this.error, this.statusCode, headersHandler);
 		}
 
@@ -381,6 +248,52 @@ namespace My_Pet_Client {
 		 */
 		LogoutUser(callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
 			this.httpClient.get(this.baseUri + 'user/logout', callback, this.error, this.statusCode, headersHandler);
+		}
+
+		/**
+		 * Place an order for a pet
+		 * Place a new order in the store
+		 * Post store/order
+		 * @return {Order} successful operation
+		 */
+		PlaceOrder(callback: (data : Order) => any, requestBody: Order, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.post(this.baseUri + 'store/order', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		}
+
+		/**
+		 * Update an existing pet
+		 * Update an existing pet by Id
+		 * Put pet
+		 * @param {Pet} requestBody Update an existent pet in the store
+		 * @return {Pet} Successful operation
+		 */
+		UpdatePet(callback: (data : Pet) => any, requestBody: Pet, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.put(this.baseUri + 'pet', requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		}
+
+		/**
+		 * Updates a pet in the store with form data
+		 * Post pet/{petId}
+		 * @param {string} petId ID of pet that needs to be updated
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} name Name of pet that needs to be updated
+		 * @param {string} status Status of pet that needs to be updated
+		 * @return {void} 
+		 */
+		UpdatePetWithForm(petId: string, name: string | null | undefined, status: string | null | undefined, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.post(this.baseUri + 'pet/' + petId + '?name=' + (name == null ? '' : encodeURIComponent(name)) + '&status=' + (status == null ? '' : encodeURIComponent(status)), null, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
+		}
+
+		/**
+		 * Update user
+		 * This can only be done by the logged in user.
+		 * Put user/{username}
+		 * @param {string} username name that need to be deleted
+		 * @param {User} requestBody Update an existent user in the store
+		 * @return {void} 
+		 */
+		UpdateUser(username: string, callback: (data : void) => any, requestBody: User, headersHandler?: () => {[header: string]: string}) {
+			this.httpClient.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), requestBody, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
 		}
 	}
 

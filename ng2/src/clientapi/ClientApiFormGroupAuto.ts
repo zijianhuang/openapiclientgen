@@ -3,233 +3,132 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace My_Pet_Client {
+	export interface Address {
+		city?: string | null;
+		state?: string | null;
+		street?: string | null;
+		zip?: string | null;
+	}
+	export interface AddressFormProperties {
+		city: FormControl<string | null | undefined>,
+		state: FormControl<string | null | undefined>,
+		street: FormControl<string | null | undefined>,
+		zip: FormControl<string | null | undefined>,
+	}
+	export function CreateAddressFormGroup() {
+		return new FormGroup<AddressFormProperties>({
+			city: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<string | null | undefined>(undefined),
+			street: new FormControl<string | null | undefined>(undefined),
+			zip: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ApiResponse {
 
 		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
-		type?: string | null;
 		message?: string | null;
+		type?: string | null;
 	}
 	export interface ApiResponseFormProperties {
 
 		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
-		type: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
+		type: FormControl<string | null | undefined>,
 	}
 	export function CreateApiResponseFormGroup() {
 		return new FormGroup<ApiResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			type: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-
-	/** A representation of a cat */
-	export interface Cat extends Pet {
-
-		/**
-		 * The measured skill for hunting
-		 * Required
-		 */
-		huntingSkill: CatHuntingSkill;
-	}
-
-	/** A representation of a cat */
-	export interface CatFormProperties extends PetFormProperties {
-
-		/**
-		 * The measured skill for hunting
-		 * Required
-		 */
-		huntingSkill: FormControl<CatHuntingSkill | null | undefined>,
-	}
-	export function CreateCatFormGroup() {
-		return new FormGroup<CatFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			status: new FormControl<PetStatus | null | undefined>(undefined),
-			petType: new FormControl<string | null | undefined>(undefined),
-			huntingSkill: new FormControl<CatHuntingSkill | null | undefined>(undefined, [Validators.required]),
-		});
-
-	}
-
-	export enum CatHuntingSkill { clueless = 0, lazy = 1, adventurous = 2, aggressive = 3 }
 
 	export interface Category {
 
-		/** Category ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
-
-		/**
-		 * Category name
-		 * Min length: 1
-		 */
 		name?: string | null;
-
-		/** Test Sub Category */
-		sub?: CategorySub;
 	}
 	export interface CategoryFormProperties {
 
-		/** Category ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id: FormControl<string | null | undefined>,
-
-		/**
-		 * Category name
-		 * Min length: 1
-		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateCategoryFormGroup() {
 		return new FormGroup<CategoryFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
-	export interface CategorySub {
+	export interface Customer {
+		address?: Array<Address>;
 
-		/** Dumb Property */
-		prop1?: string | null;
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+		username?: string | null;
 	}
-	export interface CategorySubFormProperties {
+	export interface CustomerFormProperties {
 
-		/** Dumb Property */
-		prop1: FormControl<string | null | undefined>,
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+		username: FormControl<string | null | undefined>,
 	}
-	export function CreateCategorySubFormGroup() {
-		return new FormGroup<CategorySubFormProperties>({
-			prop1: new FormControl<string | null | undefined>(undefined),
-		});
-
-	}
-
-
-	/** A representation of a dog */
-	export interface Dog extends Pet {
-
-		/**
-		 * The size of the pack the dog is from
-		 * Required
-		 * Minimum: 1
-		 */
-		packSize: number;
-	}
-
-	/** A representation of a dog */
-	export interface DogFormProperties extends PetFormProperties {
-
-		/**
-		 * The size of the pack the dog is from
-		 * Required
-		 * Minimum: 1
-		 */
-		packSize: FormControl<number | null | undefined>,
-	}
-	export function CreateDogFormGroup() {
-		return new FormGroup<DogFormProperties>({
+	export function CreateCustomerFormGroup() {
+		return new FormGroup<CustomerFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			status: new FormControl<PetStatus | null | undefined>(undefined),
-			petType: new FormControl<string | null | undefined>(undefined),
-			packSize: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
-		});
-
-	}
-
-
-	/** A representation of a honey bee */
-	export interface HoneyBee extends Pet {
-
-		/**
-		 * Average amount of honey produced per day in ounces
-		 * Required
-		 * Type: double
-		 */
-		honeyPerDay: number;
-	}
-
-	/** A representation of a honey bee */
-	export interface HoneyBeeFormProperties extends PetFormProperties {
-
-		/**
-		 * Average amount of honey produced per day in ounces
-		 * Required
-		 * Type: double
-		 */
-		honeyPerDay: FormControl<number | null | undefined>,
-	}
-	export function CreateHoneyBeeFormGroup() {
-		return new FormGroup<HoneyBeeFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			status: new FormControl<PetStatus | null | undefined>(undefined),
-			petType: new FormControl<string | null | undefined>(undefined),
-			honeyPerDay: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			username: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Order {
+		complete?: boolean | null;
 
-		/** Order ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
 
-		/** Pet ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		petId?: string | null;
 
-		/** Minimum: 1 */
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quantity?: number | null;
-
-		/** Estimated ship date */
 		shipDate?: Date | null;
 
 		/** Order Status */
 		status?: OrderStatus | null;
-
-		/** Indicates whenever order was completed or not */
-		complete?: boolean | null;
-
-		/** Unique Request Id */
-		requestId?: string | null;
 	}
 	export interface OrderFormProperties {
+		complete: FormControl<boolean | null | undefined>,
 
-		/** Order ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id: FormControl<string | null | undefined>,
 
-		/** Pet ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		petId: FormControl<string | null | undefined>,
 
-		/** Minimum: 1 */
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quantity: FormControl<number | null | undefined>,
-
-		/** Estimated ship date */
 		shipDate: FormControl<Date | null | undefined>,
 
 		/** Order Status */
 		status: FormControl<OrderStatus | null | undefined>,
-
-		/** Indicates whenever order was completed or not */
-		complete: FormControl<boolean | null | undefined>,
-
-		/** Unique Request Id */
-		requestId: FormControl<string | null | undefined>,
 	}
 	export function CreateOrderFormGroup() {
 		return new FormGroup<OrderFormProperties>({
+			complete: new FormControl<boolean | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			petId: new FormControl<string | null | undefined>(undefined),
-			quantity: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
+			quantity: new FormControl<number | null | undefined>(undefined),
 			shipDate: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<OrderStatus | null | undefined>(undefined),
-			complete: new FormControl<boolean | null | undefined>(undefined),
-			requestId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -237,190 +136,106 @@ export namespace My_Pet_Client {
 	export enum OrderStatus { placed = 0, approved = 1, delivered = 2 }
 
 	export interface Pet {
-
-		/** Pet ID */
-		id?: string | null;
-
-		/** Categories this pet belongs to */
 		category?: Category;
 
-		/**
-		 * The name given to a pet
-		 * Required
-		 */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Required */
 		name: string;
 
-		/**
-		 * The list of URL to a cute photos featuring pet
-		 * Required
-		 * Maximum items: 20
-		 */
+		/** Required */
 		photoUrls: Array<string>;
-		friend?: Pet;
 
-		/**
-		 * Tags attached to the pet
-		 * Minimum items: 1
-		 */
-		tags?: Array<Tag>;
-
-		/** Pet status in the store */
+		/** pet status in the store */
 		status?: PetStatus | null;
-
-		/** Type of a pet */
-		petType?: string | null;
+		tags?: Array<Tag>;
 	}
 	export interface PetFormProperties {
 
-		/** Pet ID */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id: FormControl<string | null | undefined>,
 
-		/**
-		 * The name given to a pet
-		 * Required
-		 */
+		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Pet status in the store */
+		/** pet status in the store */
 		status: FormControl<PetStatus | null | undefined>,
-
-		/** Type of a pet */
-		petType: FormControl<string | null | undefined>,
 	}
 	export function CreatePetFormGroup() {
 		return new FormGroup<PetFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
-			petType: new FormControl<string | null | undefined>(undefined),
-		});
-
-	}
-
-	export interface Tag {
-
-		/** Tag ID */
-		id?: string | null;
-
-		/**
-		 * Tag name
-		 * Min length: 1
-		 */
-		name?: string | null;
-	}
-	export interface TagFormProperties {
-
-		/** Tag ID */
-		id: FormControl<string | null | undefined>,
-
-		/**
-		 * Tag name
-		 * Min length: 1
-		 */
-		name: FormControl<string | null | undefined>,
-	}
-	export function CreateTagFormGroup() {
-		return new FormGroup<TagFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
 
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
-	export interface User {
+	export interface Tag {
 
 		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id?: string | null;
-		pet?: Pet;
+		name?: string | null;
+	}
+	export interface TagFormProperties {
 
-		/**
-		 * User supplied username
-		 * Min length: 4
-		 */
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface User {
+		email?: string | null;
+		firstName?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+		lastName?: string | null;
+		password?: string | null;
+		phone?: string | null;
 		username?: string | null;
 
 		/**
-		 * User first name
-		 * Min length: 1
-		 */
-		firstName?: string | null;
-
-		/**
-		 * User last name
-		 * Min length: 1
-		 */
-		lastName?: string | null;
-
-		/** User email address */
-		email?: string | null;
-
-		/**
-		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
-		 * Min length: 8
-		 */
-		password?: string | null;
-
-		/** User phone number in international format */
-		phone?: string | null;
-
-		/**
-		 * User status
+		 * User Status
 		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userStatus?: number | null;
 	}
 	export interface UserFormProperties {
+		email: FormControl<string | null | undefined>,
+		firstName: FormControl<string | null | undefined>,
 
 		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
 		id: FormControl<string | null | undefined>,
-
-		/**
-		 * User supplied username
-		 * Min length: 4
-		 */
+		lastName: FormControl<string | null | undefined>,
+		password: FormControl<string | null | undefined>,
+		phone: FormControl<string | null | undefined>,
 		username: FormControl<string | null | undefined>,
 
 		/**
-		 * User first name
-		 * Min length: 1
-		 */
-		firstName: FormControl<string | null | undefined>,
-
-		/**
-		 * User last name
-		 * Min length: 1
-		 */
-		lastName: FormControl<string | null | undefined>,
-
-		/** User email address */
-		email: FormControl<string | null | undefined>,
-
-		/**
-		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
-		 * Min length: 8
-		 */
-		password: FormControl<string | null | undefined>,
-
-		/** User phone number in international format */
-		phone: FormControl<string | null | undefined>,
-
-		/**
-		 * User status
+		 * User Status
 		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userStatus: FormControl<number | null | undefined>,
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			username: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4)]),
-			firstName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			lastName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			email: new FormControl<string | null | undefined>(undefined),
-			password: new FormControl<string | null | undefined>(undefined, [Validators.minLength(8), Validators.pattern('/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/')]),
-			phone: new FormControl<string | null | undefined>(undefined, [Validators.pattern('/^\+(?:[0-9]-?){6,14}[0-9]$/')]),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			password: new FormControl<string | null | undefined>(undefined),
+			phone: new FormControl<string | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
 			userStatus: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -433,23 +248,113 @@ export namespace My_Pet_Client {
 
 		/**
 		 * Add a new pet to the store
-		 * Add new pet to the store inventory.
+		 * Add a new pet to the store
 		 * Post pet
-		 * @param {Pet} requestBody Pet object that needs to be added to the store
-		 * @return {void} 
+		 * @param {Pet} requestBody Create a new pet in the store
+		 * @return {Pet} Successful operation
 		 */
-		AddPet(requestBody: Pet, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+		AddPet(requestBody: Pet, headersHandler?: () => HttpHeaders): Observable<Pet> {
+			return this.http.post<Pet>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
 		}
 
 		/**
-		 * Update an existing pet
-		 * Put pet
-		 * @param {Pet} requestBody Pet object that needs to be added to the store
+		 * Create user
+		 * This can only be done by the logged in user.
+		 * Post user
+		 * @param {User} requestBody Created user object
 		 * @return {void} 
 		 */
-		UpdatePet(requestBody: Pet, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.put(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+		CreateUser(requestBody: User, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
+		}
+
+		/**
+		 * Creates list of users with given input array
+		 * Creates list of users with given input array
+		 * Post user/createWithList
+		 * @return {User} Successful operation
+		 */
+		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: () => HttpHeaders): Observable<User> {
+			return this.http.post<User>(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+		}
+
+		/**
+		 * Delete purchase order by ID
+		 * For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
+		 * Delete store/order/{orderId}
+		 * @param {string} orderId ID of the order that needs to be deleted
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @return {void} 
+		 */
+		DeleteOrder(orderId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		}
+
+		/**
+		 * Deletes a pet
+		 * delete a pet
+		 * Delete pet/{petId}
+		 * @param {string} petId Pet id to delete
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @return {void} 
+		 */
+		DeletePet(petId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		}
+
+		/**
+		 * Delete user
+		 * This can only be done by the logged in user.
+		 * Delete user/{username}
+		 * @param {string} username The name that needs to be deleted
+		 * @return {void} 
+		 */
+		DeleteUser(username: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		}
+
+		/**
+		 * Finds Pets by status
+		 * Multiple status values can be provided with comma separated strings
+		 * Get pet/findByStatus
+		 * @param {PetStatus} status Status values that need to be considered for filter
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByStatus(status: PetStatus | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?status=' + status, { headers: headersHandler ? headersHandler() : undefined });
+		}
+
+		/**
+		 * Finds Pets by tags
+		 * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+		 * Get pet/findByTags
+		 * @param {Array<string>} tags Tags to filter by
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByTags(tags: Array<string> | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined });
+		}
+
+		/**
+		 * Returns pet inventories by status
+		 * Returns a map of status codes to quantities
+		 * Get store/inventory
+		 * @return {{[id: string]: number }} successful operation
+		 */
+		GetInventory(headersHandler?: () => HttpHeaders): Observable<{[id: string]: number }> {
+			return this.http.get<{[id: string]: number }>(this.baseUri + 'store/inventory', { headers: headersHandler ? headersHandler() : undefined });
+		}
+
+		/**
+		 * Find purchase order by ID
+		 * For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
+		 * Get store/order/{orderId}
+		 * @param {string} orderId ID of order that needs to be fetched
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @return {Order} successful operation
+		 */
+		GetOrderById(orderId: string, headersHandler?: () => HttpHeaders): Observable<Order> {
+			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -465,95 +370,6 @@ export namespace My_Pet_Client {
 		}
 
 		/**
-		 * Deletes a pet
-		 * Delete pet/{petId}
-		 * @param {string} petId Pet id to delete
-		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-		 * @return {void} 
-		 */
-		DeletePet(petId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
-		}
-
-		/**
-		 * Finds Pets by status
-		 * Multiple status values can be provided with comma separated strings
-		 * Get pet/findByStatus
-		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
-		 *     Minimum items: 1    Maximum items: 3
-		 * @return {Array<Pet>} successful operation
-		 */
-		FindPetsByStatus(status: Array<PetStatus>, headersHandler?: () => HttpHeaders): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { headers: headersHandler ? headersHandler() : undefined });
-		}
-
-		/**
-		 * Finds Pets by tags
-		 * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
-		 * Get pet/findByTags
-		 * @param {Array<string>} tags Tags to filter by
-		 * @return {Array<Pet>} successful operation
-		 */
-		FindPetsByTags(tags: Array<string>, headersHandler?: () => HttpHeaders): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined });
-		}
-
-		/**
-		 * Returns pet inventories by status
-		 * Returns a map of status codes to quantities
-		 * Get store/inventory
-		 * @return {{[id: string]: number }} successful operation
-		 */
-		GetInventory(headersHandler?: () => HttpHeaders): Observable<{[id: string]: number }> {
-			return this.http.get<{[id: string]: number }>(this.baseUri + 'store/inventory', { headers: headersHandler ? headersHandler() : undefined });
-		}
-
-		/**
-		 * Place an order for a pet
-		 * Post store/order
-		 * @param {Order} requestBody order placed for purchasing the pet
-		 * @return {Order} successful operation
-		 */
-		PlaceOrder(requestBody: Order, headersHandler?: () => HttpHeaders): Observable<Order> {
-			return this.http.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
-		}
-
-		/**
-		 * Find purchase order by ID
-		 * For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
-		 * Get store/order/{orderId}
-		 * @param {string} orderId ID of pet that needs to be fetched
-		 *     Minimum: 1    Maximum: 5
-		 * @return {Order} successful operation
-		 */
-		GetOrderById(orderId: string, headersHandler?: () => HttpHeaders): Observable<Order> {
-			return this.http.get<Order>(this.baseUri + 'store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined });
-		}
-
-		/**
-		 * Delete purchase order by ID
-		 * For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
-		 * Delete store/order/{orderId}
-		 * @param {string} orderId ID of the order that needs to be deleted
-		 *     Minimum: 1
-		 * @return {void} 
-		 */
-		DeleteOrder(orderId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'store/order/' + (orderId == null ? '' : encodeURIComponent(orderId)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
-		}
-
-		/**
-		 * Create user
-		 * This can only be done by the logged in user.
-		 * Post user
-		 * @param {User} requestBody Created user object
-		 * @return {void} 
-		 */
-		CreateUser(requestBody: User, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'user', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
-		}
-
-		/**
 		 * Get user by user name
 		 * Get user/{username}
 		 * @param {string} username The name that needs to be fetched. Use user1 for testing. 
@@ -564,56 +380,13 @@ export namespace My_Pet_Client {
 		}
 
 		/**
-		 * Updated user
-		 * This can only be done by the logged in user.
-		 * Put user/{username}
-		 * @param {string} username name that need to be deleted
-		 * @param {User} requestBody Updated user object
-		 * @return {void} 
-		 */
-		UpdateUser(username: string, requestBody: User, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
-		}
-
-		/**
-		 * Delete user
-		 * This can only be done by the logged in user.
-		 * Delete user/{username}
-		 * @param {string} username The name that needs to be deleted
-		 * @return {void} 
-		 */
-		DeleteUser(username: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
-		}
-
-		/**
-		 * Creates list of users with given input array
-		 * Post user/createWithArray
-		 * @param {Array<User>} requestBody List of user object
-		 * @return {void} 
-		 */
-		CreateUsersWithArrayInput(requestBody: Array<User>, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'user/createWithArray', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
-		}
-
-		/**
-		 * Creates list of users with given input array
-		 * Post user/createWithList
-		 * @param {Array<User>} requestBody List of user object
-		 * @return {void} 
-		 */
-		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
-		}
-
-		/**
 		 * Logs user into the system
 		 * Get user/login
 		 * @param {string} username The user name for login
 		 * @param {string} password The password for login in clear text
 		 * @return {string} successful operation
 		 */
-		LoginUser(username: string, password: string, headersHandler?: () => HttpHeaders): Observable<string> {
+		LoginUser(username: string | null | undefined, password: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<string> {
 			return this.http.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' });
 		}
 
@@ -624,6 +397,52 @@ export namespace My_Pet_Client {
 		 */
 		LogoutUser(headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'user/logout', { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		}
+
+		/**
+		 * Place an order for a pet
+		 * Place a new order in the store
+		 * Post store/order
+		 * @return {Order} successful operation
+		 */
+		PlaceOrder(requestBody: Order, headersHandler?: () => HttpHeaders): Observable<Order> {
+			return this.http.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+		}
+
+		/**
+		 * Update an existing pet
+		 * Update an existing pet by Id
+		 * Put pet
+		 * @param {Pet} requestBody Update an existent pet in the store
+		 * @return {Pet} Successful operation
+		 */
+		UpdatePet(requestBody: Pet, headersHandler?: () => HttpHeaders): Observable<Pet> {
+			return this.http.put<Pet>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
+		}
+
+		/**
+		 * Updates a pet in the store with form data
+		 * Post pet/{petId}
+		 * @param {string} petId ID of pet that needs to be updated
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} name Name of pet that needs to be updated
+		 * @param {string} status Status of pet that needs to be updated
+		 * @return {void} 
+		 */
+		UpdatePetWithForm(petId: string, name: string | null | undefined, status: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.post(this.baseUri + 'pet/' + petId + '?name=' + (name == null ? '' : encodeURIComponent(name)) + '&status=' + (status == null ? '' : encodeURIComponent(status)), null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		}
+
+		/**
+		 * Update user
+		 * This can only be done by the logged in user.
+		 * Put user/{username}
+		 * @param {string} username name that need to be deleted
+		 * @param {User} requestBody Update an existent user in the store
+		 * @return {void} 
+		 */
+		UpdateUser(username: string, requestBody: User, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.put(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }), observe: 'response', responseType: 'text' });
 		}
 	}
 

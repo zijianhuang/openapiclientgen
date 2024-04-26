@@ -50,7 +50,7 @@ describe('Pet API', () => {
 	);
 
 	it('FindPetsByStatus', (done) => {
-		service.FindPetsByStatus([My_Pet_Client.PetStatus.sold, My_Pet_Client.PetStatus.pending]).then(
+		service.FindPetsByStatus(My_Pet_Client.PetStatus.sold).then(
 			data => {
 				expect(data.length).toBe(3);
 				done();
@@ -94,13 +94,7 @@ describe('Pet API', () => {
 	it('AddPetWithHeaders', (done) => {
 		service.AddPet({ name: 'Pet' + Date.now().toString(), photoUrls: [] }, ()=>{return { 'transaction-id': '01234567' }}).then(
 			response => {
-				console.info('Response is ' + JSON.stringify(response));
-				expect(response.status).toBe(200);
-				expect(response.headers.get('transaction-id')).toEqual('01234567')
-				response.text().then(t=>{
-					expect(t).toContain('Pet');
-				});
-
+				expect(response.name).toContain('Pet');
 				done();
 			},
 			error => {

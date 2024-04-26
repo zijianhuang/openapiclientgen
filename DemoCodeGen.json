@@ -2,7 +2,7 @@
 	"ClientNamespace": "My.Pet.Client",
 	"ClientLibraryProjectFolderName": "./Tests/DemoClientApi",
 	"ContainerClassName": "PetClient",
-	"ClientLibraryFileName": "PetAuto.cs",
+	"ClientLibraryFileName": "PetStoreAuto.cs",
 	"ActionNameStrategy": 4,
 	"UseEnsureSuccessStatusCodeEx": true,
 	"DecorateDataModelWithDataContract": true,
@@ -10,6 +10,7 @@
 	"DataAnnotationsEnabled": true,
 	"DataAnnotationsToComments": true,
 	"HandleHttpRequestHeaders": true,
+	"SortTypesMembersAndMethods": true,
 
 	"Plugins": [
 		{

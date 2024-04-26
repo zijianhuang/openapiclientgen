@@ -15,7 +15,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		const string FetchHttpResponse = "Response";
 		const string FetchtHttpBlobResponse = "Blob";
 		//const string FetchHttpStringResponse = "string";
-	
+
 		string returnTypeText = null;
 		string typeCast = null;
 		readonly string contentType;
@@ -69,14 +69,23 @@ namespace Fonlow.CodeDom.Web.Ts
 			const string returnBolb = "{if (d.status<=202) return d.blob(); else if (d.status==204) return null; throw d;}";
 			const string returnJson = "{if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;}";
 
-			string contentOptionsWithHeadersHandlerForString = $"{{ method: '{HttpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
-			var ContentOptionsForString = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForString : $"{{ method: '{HttpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			string GetContentOptionsForString()
+			{
+				string contentOptionsWithHeadersHandlerForString = $"{{ method: '{HttpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+				return settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForString : $"{{ method: '{HttpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			}
 
-			string contentOptionsWithHeadersHandlerForResponse = $"{{ method: '{HttpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
-			var ContentOptionsForResponse = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForResponse : $"{{ method: '{HttpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			string GetContentOptionsForResponse()
+			{
+				string contentOptionsWithHeadersHandlerForResponse = $"{{ method: '{HttpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+				return settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForResponse : $"{{ method: '{HttpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			}
 
-			string optionsWithHeadersHandlerAndContent = $"{{ method: '{HttpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
-			var OptionsWithContent = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ method: '{HttpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			string GetOptionsWithContent()
+			{
+				string optionsWithHeadersHandlerAndContent = $"{{ method: '{HttpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+				return settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ method: '{HttpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			}
 
 			string optionsWithHeadersHandlerForString = $"{{ method: '{HttpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
 			var OptionsForString = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForString : $"{{ method: '{HttpMethodName}' }}";
@@ -111,7 +120,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				if (HttpMethodName == "get" || HttpMethodName == "delete")
 				{
-					Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForString}).then(d => {{if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;}});")); //todo: type cast is not really needed.
+					Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForString}).then(d => {returnNullOrText});"));
 					return;
 				}
 
@@ -119,11 +128,35 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForString}).then(d => {{if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;}});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForString}).then(d => {returnNullOrText});"));
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {ContentOptionsForString}).then(d => {{if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;}});"));
+						var contentOptions = GetContentOptionsForString();
+						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {contentOptions}).then(d => {returnNullOrText});"));
+					}
+
+					return;
+				}
+			}
+			else if (returnTypeText == FetchtHttpBlobResponse)//translated from blobresponse to this
+			{
+				if (HttpMethodName == "get" || HttpMethodName == "delete")
+				{
+					Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForString}).then(d => {returnBolb});")); //todo: type cast is not really needed.
+					return;
+				}
+
+				if (HttpMethodName == "post" || HttpMethodName == "put" || HttpMethodName == "patch")
+				{
+					if (RequestBodyCodeTypeReference == null)
+					{
+						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForString}).then(d => {returnBolb});"));
+					}
+					else
+					{
+						var contentOptions = GetContentOptionsForString();
+						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {contentOptions}).then(d => {returnBolb});"));
 					}
 
 					return;
@@ -145,17 +178,15 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsWithContent});"));
+						var contentOptions = GetOptionsWithContent();
+						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {contentOptions});"));
 					}
 
 					return;
 				}
-
 			}
 			else
 			{
-				string returnTypeCast = returnTypeText == null ? String.Empty : $"<{returnTypeText}>";
-
 				if (HttpMethodName == "get" || HttpMethodName == "delete")
 				{
 					if (returnTypeText == null)
@@ -164,31 +195,33 @@ namespace Fonlow.CodeDom.Web.Ts
 					}
 					else
 					{
-						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {Options}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
+						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {Options}).then(d => {returnJson});"));
 					}
 				}
 				else if (HttpMethodName == "post" || HttpMethodName == "put" || HttpMethodName == "patch")
 				{
 					if (returnTypeText == null)//http response
 					{
-						if (RequestBodyCodeTypeReference == null)//no content body
+						if (RequestBodyCodeTypeReference == null)
 						{
 							Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForResponse});"));
 						}
 						else
 						{
-							Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {ContentOptionsForResponse});"));
+							var contentOptions = GetContentOptionsForResponse();
+							Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {contentOptions});"));
 						}
 					}
 					else // type is returned
 					{
-						if (RequestBodyCodeTypeReference == null) // no body
+						if (RequestBodyCodeTypeReference == null)
 						{
-							Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {Options}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
+							Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {Options}).then(d => {returnJson});"));
 						}
 						else
 						{
-							Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsWithContent}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
+							var contentOptions = GetOptionsWithContent();
+							Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {contentOptions}).then(d => {returnJson});"));
 						}
 					}
 				}
@@ -196,9 +229,8 @@ namespace Fonlow.CodeDom.Web.Ts
 				{
 					Debug.Assert(false, $"How come with {HttpMethodName}?");
 				}
+
 			}
-
-
 		}
 
 	}
