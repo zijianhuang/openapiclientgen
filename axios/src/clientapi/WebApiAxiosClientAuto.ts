@@ -106,7 +106,7 @@ export namespace My_Pet_Client {
 		 * @return {Pet} Successful operation
 		 */
 		AddPet(requestBody: Pet, headersHandler?: () => {[header: string]: string}): Promise<Pet> {
-			return Axios.post<Pet>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.post<Pet>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -127,7 +127,7 @@ export namespace My_Pet_Client {
 		 * @return {User} Successful operation
 		 */
 		CreateUsersWithListInput(requestBody: Array<User>, headersHandler?: () => {[header: string]: string}): Promise<User> {
-			return Axios.post<User>(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.post<User>(this.baseUri + 'user/createWithList', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -173,7 +173,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: PetStatus | null | undefined, headersHandler?: () => {[header: string]: string}): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?status=' + status, { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?status=' + status, { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -184,7 +184,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByTags(tags: Array<string> | null | undefined, headersHandler?: () => {[header: string]: string}): Promise<Array<Pet>> {
-			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByTags?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -194,7 +194,7 @@ export namespace My_Pet_Client {
 		 * @return {{[id: string]: number }} successful operation
 		 */
 		GetInventory(headersHandler?: () => {[header: string]: string}): Promise<{[id: string]: number }> {
-			return Axios.get<{[id: string]: number }>(this.baseUri + 'store/inventory', { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.get<{[id: string]: number }>(this.baseUri + 'store/inventory', { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -206,7 +206,7 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		GetOrderById(orderId: string, headersHandler?: () => {[header: string]: string}): Promise<Order> {
-			return Axios.get<Order>(this.baseUri + 'store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.get<Order>(this.baseUri + 'store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -218,7 +218,7 @@ export namespace My_Pet_Client {
 		 * @return {Pet} successful operation
 		 */
 		GetPetById(petId: string, headersHandler?: () => {[header: string]: string}): Promise<Pet> {
-			return Axios.get<Pet>(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.get<Pet>(this.baseUri + 'pet/' + petId, { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -228,7 +228,7 @@ export namespace My_Pet_Client {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string, headersHandler?: () => {[header: string]: string}): Promise<User> {
-			return Axios.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.get<User>(this.baseUri + 'user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -239,7 +239,7 @@ export namespace My_Pet_Client {
 		 * @return {string} successful operation
 		 */
 		LoginUser(username: string | null | undefined, password: string | null | undefined, headersHandler?: () => {[header: string]: string}): Promise<string> {
-			return Axios.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.get(this.baseUri + 'user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -258,7 +258,7 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		PlaceOrder(requestBody: Order, headersHandler?: () => {[header: string]: string}): Promise<Order> {
-			return Axios.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.post<Order>(this.baseUri + 'store/order', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**
@@ -269,7 +269,7 @@ export namespace My_Pet_Client {
 		 * @return {Pet} Successful operation
 		 */
 		UpdatePet(requestBody: Pet, headersHandler?: () => {[header: string]: string}): Promise<Pet> {
-			return Axios.put<Pet>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data); throw d;});
+			return Axios.put<Pet>(this.baseUri + 'pet', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.data; throw d;});
 		}
 
 		/**

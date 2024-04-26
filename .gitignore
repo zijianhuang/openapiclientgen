@@ -53,3 +53,4 @@ node_modules
 /ng2/.angular
 /Tests/openapi-directory20240114
 /fetchapi/package-lock.json
+/axios/package-lock.json
