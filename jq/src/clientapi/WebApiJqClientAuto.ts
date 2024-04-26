@@ -1,6 +1,8 @@
 ///<reference path="HttpClient.ts" />
 namespace My_Pet_Client {
 	export interface ApiResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		type?: string | null;
 		message?: string | null;
@@ -22,7 +24,7 @@ namespace My_Pet_Client {
 	export interface Category {
 
 		/** Category ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Category name
@@ -31,7 +33,7 @@ namespace My_Pet_Client {
 		name?: string | null;
 
 		/** Test Sub Category */
-		sub?: CategorySub | null;
+		sub?: CategorySub;
 	}
 
 	export interface CategorySub {
@@ -59,6 +61,7 @@ namespace My_Pet_Client {
 		/**
 		 * Average amount of honey produced per day in ounces
 		 * Required
+		 * Type: double
 		 */
 		honeyPerDay: number;
 	}
@@ -66,10 +69,12 @@ namespace My_Pet_Client {
 	export interface Order {
 
 		/** Order ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Pet ID */
-		petId?: number | null;
+		petId?: string | null;
+
+		/** Minimum: 1 */
 		quantity?: number | null;
 
 		/** Estimated ship date */
@@ -90,10 +95,10 @@ namespace My_Pet_Client {
 	export interface Pet {
 
 		/** Pet ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Categories this pet belongs to */
-		category?: Category | null;
+		category?: Category;
 
 		/**
 		 * The name given to a pet
@@ -107,13 +112,13 @@ namespace My_Pet_Client {
 		 * Maximum items: 20
 		 */
 		photoUrls: Array<string>;
-		friend?: Pet | null;
+		friend?: Pet;
 
 		/**
 		 * Tags attached to the pet
 		 * Minimum items: 1
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** Pet status in the store */
 		status?: PetStatus | null;
@@ -125,7 +130,7 @@ namespace My_Pet_Client {
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Tag name
@@ -137,8 +142,10 @@ namespace My_Pet_Client {
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
 	export interface User {
-		id?: number | null;
-		pet?: Pet | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+		pet?: Pet;
 
 		/**
 		 * User supplied username
@@ -164,17 +171,16 @@ namespace My_Pet_Client {
 		/**
 		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
 		 * Min length: 8
-		 * Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
 		 */
 		password?: string | null;
 
-		/**
-		 * User phone number in international format
-		 * Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
-		 */
+		/** User phone number in international format */
 		phone?: string | null;
 
-		/** User status */
+		/**
+		 * User status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userStatus?: number | null;
 	}
 
@@ -207,20 +213,22 @@ namespace My_Pet_Client {
 		 * Find pet by ID
 		 * Returns a single pet
 		 * Get pet/{petId}
-		 * @param {number} petId ID of pet to return
+		 * @param {string} petId ID of pet to return
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Pet} successful operation
 		 */
-		GetPetById(petId: number, callback: (data : Pet) => any, headersHandler?: () => {[header: string]: string}) {
+		GetPetById(petId: string, callback: (data : Pet) => any, headersHandler?: () => {[header: string]: string}) {
 			this.httpClient.get(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode, headersHandler);
 		}
 
 		/**
 		 * Deletes a pet
 		 * Delete pet/{petId}
-		 * @param {number} petId Pet id to delete
+		 * @param {string} petId Pet id to delete
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		DeletePet(petId: number, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
+		DeletePet(petId: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {
 			this.httpClient.delete(this.baseUri + 'pet/' + petId, callback, this.error, this.statusCode, headersHandler);
 		}
 
@@ -229,6 +237,7 @@ namespace My_Pet_Client {
 		 * Multiple status values can be provided with comma separated strings
 		 * Get pet/findByStatus
 		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
+		 *     Minimum items: 1    Maximum items: 3
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: Array<PetStatus>, callback: (data : Array<Pet>) => any, headersHandler?: () => {[header: string]: string}) {
@@ -270,10 +279,11 @@ namespace My_Pet_Client {
 		 * Find purchase order by ID
 		 * For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 		 * Get store/order/{orderId}
-		 * @param {number} orderId ID of pet that needs to be fetched
+		 * @param {string} orderId ID of pet that needs to be fetched
+		 *     Minimum: 1    Maximum: 5
 		 * @return {Order} successful operation
 		 */
-		GetOrderById(orderId: number, callback: (data : Order) => any, headersHandler?: () => {[header: string]: string}) {
+		GetOrderById(orderId: string, callback: (data : Order) => any, headersHandler?: () => {[header: string]: string}) {
 			this.httpClient.get(this.baseUri + 'store/order/' + orderId, callback, this.error, this.statusCode, headersHandler);
 		}
 
@@ -282,6 +292,7 @@ namespace My_Pet_Client {
 		 * For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
 		 * Delete store/order/{orderId}
 		 * @param {string} orderId ID of the order that needs to be deleted
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
 		DeleteOrder(orderId: string, callback: (data : void) => any, headersHandler?: () => {[header: string]: string}) {

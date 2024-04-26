@@ -2,6 +2,8 @@ import {HttpClient} from 'aurelia-fetch-client';
 import {autoinject} from 'aurelia-framework';
 export namespace My_Pet_Client {
 	export interface ApiResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		type?: string | null;
 		message?: string | null;
@@ -23,7 +25,7 @@ export namespace My_Pet_Client {
 	export interface Category {
 
 		/** Category ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Category name
@@ -32,7 +34,7 @@ export namespace My_Pet_Client {
 		name?: string | null;
 
 		/** Test Sub Category */
-		sub?: CategorySub | null;
+		sub?: CategorySub;
 	}
 
 	export interface CategorySub {
@@ -60,6 +62,7 @@ export namespace My_Pet_Client {
 		/**
 		 * Average amount of honey produced per day in ounces
 		 * Required
+		 * Type: double
 		 */
 		honeyPerDay: number;
 	}
@@ -67,10 +70,12 @@ export namespace My_Pet_Client {
 	export interface Order {
 
 		/** Order ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Pet ID */
-		petId?: number | null;
+		petId?: string | null;
+
+		/** Minimum: 1 */
 		quantity?: number | null;
 
 		/** Estimated ship date */
@@ -91,10 +96,10 @@ export namespace My_Pet_Client {
 	export interface Pet {
 
 		/** Pet ID */
-		id?: number | null;
+		id?: string | null;
 
 		/** Categories this pet belongs to */
-		category?: Category | null;
+		category?: Category;
 
 		/**
 		 * The name given to a pet
@@ -108,13 +113,13 @@ export namespace My_Pet_Client {
 		 * Maximum items: 20
 		 */
 		photoUrls: Array<string>;
-		friend?: Pet | null;
+		friend?: Pet;
 
 		/**
 		 * Tags attached to the pet
 		 * Minimum items: 1
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** Pet status in the store */
 		status?: PetStatus | null;
@@ -126,7 +131,7 @@ export namespace My_Pet_Client {
 	export interface Tag {
 
 		/** Tag ID */
-		id?: number | null;
+		id?: string | null;
 
 		/**
 		 * Tag name
@@ -138,8 +143,10 @@ export namespace My_Pet_Client {
 	export enum PetStatus { available = 0, pending = 1, sold = 2 }
 
 	export interface User {
-		id?: number | null;
-		pet?: Pet | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+		pet?: Pet;
 
 		/**
 		 * User supplied username
@@ -165,17 +172,16 @@ export namespace My_Pet_Client {
 		/**
 		 * User password, MUST contain a mix of upper and lower case letters, as well as digits
 		 * Min length: 8
-		 * Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
 		 */
 		password?: string | null;
 
-		/**
-		 * User phone number in international format
-		 * Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
-		 */
+		/** User phone number in international format */
 		phone?: string | null;
 
-		/** User status */
+		/**
+		 * User status
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userStatus?: number | null;
 	}
 
@@ -209,20 +215,22 @@ export namespace My_Pet_Client {
 		 * Find pet by ID
 		 * Returns a single pet
 		 * Get pet/{petId}
-		 * @param {number} petId ID of pet to return
+		 * @param {string} petId ID of pet to return
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Pet} successful operation
 		 */
-		GetPetById(petId: number, headersHandler?: () => {[header: string]: string}): Promise<Pet> {
-			return this.http.get('pet/' + petId, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
+		GetPetById(petId: string, headersHandler?: () => {[header: string]: string}): Promise<Pet> {
+			return this.http.get('pet/' + petId, { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
 		 * Deletes a pet
 		 * Delete pet/{petId}
-		 * @param {number} petId Pet id to delete
+		 * @param {string} petId Pet id to delete
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		DeletePet(petId: number, headersHandler?: () => {[header: string]: string}): Promise<Response> {
+		DeletePet(petId: string, headersHandler?: () => {[header: string]: string}): Promise<Response> {
 			return this.http.delete('pet/' + petId, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
@@ -231,10 +239,11 @@ export namespace My_Pet_Client {
 		 * Multiple status values can be provided with comma separated strings
 		 * Get pet/findByStatus
 		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
+		 *     Minimum items: 1    Maximum items: 3
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByStatus(status: Array<PetStatus>, headersHandler?: () => {[header: string]: string}): Promise<Array<Pet>> {
-			return this.http.get('pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
+			return this.http.get('pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -245,7 +254,7 @@ export namespace My_Pet_Client {
 		 * @return {Array<Pet>} successful operation
 		 */
 		FindPetsByTags(tags: Array<string>, headersHandler?: () => {[header: string]: string}): Promise<Array<Pet>> {
-			return this.http.get('pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
+			return this.http.get('pet/findByTags?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&'), { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -255,7 +264,7 @@ export namespace My_Pet_Client {
 		 * @return {{[id: string]: number }} successful operation
 		 */
 		GetInventory(headersHandler?: () => {[header: string]: string}): Promise<{[id: string]: number }> {
-			return this.http.get('store/inventory', { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
+			return this.http.get('store/inventory', { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -265,18 +274,19 @@ export namespace My_Pet_Client {
 		 * @return {Order} successful operation
 		 */
 		PlaceOrder(requestBody: Order, headersHandler?: () => {[header: string]: string}): Promise<Order> {
-			return this.http.post('store/order', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.json());
+			return this.http.post('store/order', JSON.stringify(requestBody), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
 		 * Find purchase order by ID
 		 * For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 		 * Get store/order/{orderId}
-		 * @param {number} orderId ID of pet that needs to be fetched
+		 * @param {string} orderId ID of pet that needs to be fetched
+		 *     Minimum: 1    Maximum: 5
 		 * @return {Order} successful operation
 		 */
-		GetOrderById(orderId: number, headersHandler?: () => {[header: string]: string}): Promise<Order> {
-			return this.http.get('store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
+		GetOrderById(orderId: string, headersHandler?: () => {[header: string]: string}): Promise<Order> {
+			return this.http.get('store/order/' + orderId, { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -284,6 +294,7 @@ export namespace My_Pet_Client {
 		 * For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
 		 * Delete store/order/{orderId}
 		 * @param {string} orderId ID of the order that needs to be deleted
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
 		DeleteOrder(orderId: string, headersHandler?: () => {[header: string]: string}): Promise<Response> {
@@ -308,7 +319,7 @@ export namespace My_Pet_Client {
 		 * @return {User} successful operation
 		 */
 		GetUserByName(username: string, headersHandler?: () => {[header: string]: string}): Promise<User> {
-			return this.http.get('user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.json());
+			return this.http.get('user/' + (username == null ? '' : encodeURIComponent(username)), { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.json(); throw d;});
 		}
 
 		/**
@@ -362,7 +373,7 @@ export namespace My_Pet_Client {
 		 * @return {string} successful operation
 		 */
 		LoginUser(username: string, password: string, headersHandler?: () => {[header: string]: string}): Promise<string> {
-			return this.http.get('user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.text());
+			return this.http.get('user/login?username=' + (username == null ? '' : encodeURIComponent(username)) + '&password=' + (password == null ? '' : encodeURIComponent(password)), { headers: headersHandler ? headersHandler() : undefined }).then(d => {if (d.status<=204) return d.text(); throw d;});
 		}
 
 		/**

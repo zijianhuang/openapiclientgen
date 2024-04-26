@@ -65,25 +65,27 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected override void RenderImplementation()
 		{
-			var httpMethodName = HttpMethod.ToString().ToLower();
+			const string returnNullOrText = "{if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;}";
+			const string returnBolb = "{if (d.status<=202) return d.blob(); else if (d.status==204) return null; throw d;}";
+			const string returnJson = "{if (d.status<=202) return d.json(); else if (d.status==204) return null; throw d;}";
 
-			string contentOptionsWithHeadersHandlerForString = $"{{ method: '{httpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
-			var ContentOptionsForString = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForString : $"{{ method: '{httpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			string contentOptionsWithHeadersHandlerForString = $"{{ method: '{HttpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			var ContentOptionsForString = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForString : $"{{ method: '{HttpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
 
-			string contentOptionsWithHeadersHandlerForResponse = $"{{ method: '{httpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
-			var ContentOptionsForResponse = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForResponse : $"{{ method: '{httpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			string contentOptionsWithHeadersHandlerForResponse = $"{{ method: '{HttpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			var ContentOptionsForResponse = settings.HandleHttpRequestHeaders ? contentOptionsWithHeadersHandlerForResponse : $"{{ method: '{HttpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
 
-			string optionsWithHeadersHandlerAndContent = $"{{ method: '{httpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
-			var OptionsWithContent = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ method: '{httpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			string optionsWithHeadersHandlerAndContent = $"{{ method: '{HttpMethodName}', headers: headersHandler ? Object.assign(headersHandler(), {{ 'Content-Type': '{contentType}' }}): {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
+			var OptionsWithContent = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerAndContent : $"{{ method: '{HttpMethodName}', headers: {{ 'Content-Type': '{contentType}' }}, body: JSON.stringify(requestBody) }}";
 
-			string optionsWithHeadersHandlerForString = $"{{ method: '{httpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
-			var OptionsForString = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForString : $"{{ method: '{httpMethodName}' }}";
+			string optionsWithHeadersHandlerForString = $"{{ method: '{HttpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
+			var OptionsForString = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForString : $"{{ method: '{HttpMethodName}' }}";
 
-			string optionsWithHeadersHandlerForResponse = $"{{ method: '{httpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
-			var OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : $"{{ method: '{httpMethodName}' }}";
+			string optionsWithHeadersHandlerForResponse = $"{{ method: '{HttpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
+			var OptionsForResponse = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandlerForResponse : $"{{ method: '{HttpMethodName}' }}";
 
-			string optionsWithHeadersHandler = $"{{ method: '{httpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
-			var Options = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandler : $"{{ method: '{httpMethodName}' }}";
+			string optionsWithHeadersHandler = $"{{ method: '{HttpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
+			var Options = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandler : $"{{ method: '{HttpMethodName}' }}";
 
 			var parameters = CreateCodeParameterDeclarationExpressions();
 
@@ -107,13 +109,13 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			if (ReturnTypeReference != null && ReturnTypeReference.BaseType == "System.String" && ReturnTypeReference.ArrayElementType == null)//stringAsString is for .NET Core Web API
 			{
-				if (httpMethodName == "get" || httpMethodName == "delete")
+				if (HttpMethodName == "get" || HttpMethodName == "delete")
 				{
 					Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForString}).then(d => {{if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;}});")); //todo: type cast is not really needed.
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
+				if (HttpMethodName == "post" || HttpMethodName == "put" || HttpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
@@ -127,38 +129,15 @@ namespace Fonlow.CodeDom.Web.Ts
 					return;
 				}
 			}
-			//else if (returnTypeText == FetchHttpStringResponse)//translated from response to this
-			//{
-			//	if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
-			//	{
-			//		Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {OptionsForResponse}).then(d => {{if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;}});"));
-			//		return;
-			//	}
-
-			//	if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
-			//	{
-			//		if (RequestBodyCodeTypeReference == null)
-			//		{
-			//			Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, null, {OptionsForResponse}).then(d => {{if (d.status<=204) return d.status == 204 ? null : d.text(); throw d;}});"));
-			//		}
-			//		else
-			//		{
-			//			Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, JSON.stringify(requestBody), {ContentOptionsForResponse});"));
-			//		}
-
-			//		return;
-			//	}
-
-			//}
 			else if (returnTypeText == FetchHttpResponse) // client should care about only status
 			{
-				if (httpMethodName == "get" || httpMethodName == "delete")
+				if (HttpMethodName == "get" || HttpMethodName == "delete")
 				{
 					Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {Options});"));
 					return;
 				}
 
-				if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
+				if (HttpMethodName == "post" || HttpMethodName == "put" || HttpMethodName == "patch")
 				{
 					if (RequestBodyCodeTypeReference == null)
 					{
@@ -177,7 +156,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			{
 				string returnTypeCast = returnTypeText == null ? String.Empty : $"<{returnTypeText}>";
 
-				if (httpMethodName == "get" || httpMethodName == "delete")
+				if (HttpMethodName == "get" || HttpMethodName == "delete")
 				{
 					if (returnTypeText == null)
 					{
@@ -188,7 +167,7 @@ namespace Fonlow.CodeDom.Web.Ts
 						Method.Statements.Add(new CodeSnippetStatement($"return fetch({uriText}, {Options}).then(d => {{if (d.status<=204) return d.json(); throw d;}});"));
 					}
 				}
-				else if (httpMethodName == "post" || httpMethodName == "put" || httpMethodName == "patch")
+				else if (HttpMethodName == "post" || HttpMethodName == "put" || HttpMethodName == "patch")
 				{
 					if (returnTypeText == null)//http response
 					{
@@ -215,7 +194,7 @@ namespace Fonlow.CodeDom.Web.Ts
 				}
 				else
 				{
-					Debug.Assert(false, $"How come with {httpMethodName}?");
+					Debug.Assert(false, $"How come with {HttpMethodName}?");
 				}
 			}
 

@@ -22,7 +22,7 @@ describe('Pet API', () => {
 	const service = new namespaces.My_Pet_Client.PetClient(apiBaseUri);
 
 	it('getPetById', (done) => {
-		service.GetPetById(12).then(
+		service.GetPetById('12').then(
 			data => {
 				expect(data.name).toBe('Narco');
 				done();
@@ -36,7 +36,7 @@ describe('Pet API', () => {
 	);
 
 	it('getPetByIdWithHeaders', (done) => {
-		service.GetPetById(13).then(
+		service.GetPetById('13').then(
 			data => {
 				expect(data.name).toBe('Bombasto');
 				done();
@@ -64,7 +64,7 @@ describe('Pet API', () => {
 	);
 
 	it('DeletePetNotFound', (done) => {
-		service.DeletePet(9).then(
+		service.DeletePet('9').then(
 			data => {
 				expect(data.status).toBe(404);
 				done();
@@ -78,7 +78,7 @@ describe('Pet API', () => {
 	);
 
 	it('DeletePet', (done) => {
-		service.DeletePet(13).then(
+		service.DeletePet('13').then(
 			data => {
 				expect(data.status).toBe(200);
 				done();
@@ -96,9 +96,9 @@ describe('Pet API', () => {
 			response => {
 				console.info('Response is ' + JSON.stringify(response));
 				expect(response.status).toBe(200);
+				expect(response.headers.get('transaction-id')).toEqual('01234567')
 				response.text().then(t=>{
 					expect(t).toContain('Pet');
-					expect(t).toContain('01234567');	
 				});
 
 				done();

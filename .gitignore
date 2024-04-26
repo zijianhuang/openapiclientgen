@@ -52,3 +52,4 @@ node_modules
 /.github
 /ng2/.angular
 /Tests/openapi-directory20240114
+/fetchapi/package-lock.json

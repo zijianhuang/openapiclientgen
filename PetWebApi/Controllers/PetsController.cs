@@ -17,7 +17,7 @@ namespace MyNamespace
 		{
 		}
 
-		/// <summary>Add a new pet to the store</summary>
+		/// <summary>Add a new pet to the store<. If you give header transaction-id, it will give back the same/summary>
 		/// <param name="accept_Language">The language you prefer for messages. Supported values are en-AU, en-CA, en-GB, en-US</param>
 		/// <param name="cookieParam">Some cookie</param>
 		[HttpPost, Route("pet")]

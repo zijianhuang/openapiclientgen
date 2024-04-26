@@ -8,6 +8,7 @@ using System.Text;
 using System.Linq;
 using System.Collections.Generic;
 using Fonlow.Poco2Client;
+using System.Globalization;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
@@ -30,6 +31,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		BodyContentRefBuilder bodyContentRefBuilder;
 		protected string ActionName { get; private set; }
 		protected OperationType HttpMethod { get; private set; }
+		protected string HttpMethodName { get; private set; }
 
 		readonly IRenamer renamer;
 
@@ -55,6 +57,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.nameComposer = new NameComposer(settings, renamer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
+			this.HttpMethodName= HttpMethod.ToString().ToLower(CultureInfo.CurrentCulture); //Method is always uppercase. 
 			this.ActionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, ActionName, renamer);
 			this.parametersRefBuilder = new ParametersRefBuilder(com2TsTypes, ActionName, renamer);
