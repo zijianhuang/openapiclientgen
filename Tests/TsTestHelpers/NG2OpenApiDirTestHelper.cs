@@ -20,13 +20,16 @@ namespace SwagTests
 		/// <param name="genType"></param>
 		/// <param name="output"></param>
 		/// <param name="defaultDefFile">default is openapi.yaml</param>
-		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output, string defaultDefFile="openapi.yaml") : base(genType, output, 
+		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output, string defaultDefFile="openapi.yaml", ISettings defaultSettings=null) : base(genType, output, 
 			new CasualTestingSettings(TestHelpers.TestingSettings.Instance.Build, TestHelpers.TestingSettings.Instance.UpdateGenerated))
 		{
 			this.defaultDefFile = defaultDefFile;
+			this.defaultSettings = defaultSettings;
 		}
 
 		readonly string defaultDefFile;
+
+		readonly ISettings defaultSettings;
 
 		/// <summary>
 		/// Just generate and build, not assertion for comparing previous. Ignore the settings in appsettings.json

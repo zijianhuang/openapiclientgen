@@ -9,7 +9,7 @@ namespace SwagTests
 		readonly CSharpTestHelperForOpenApiDir helper;
 		public ODAzureTests2(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelperForOpenApiDir(output, "swagger.yaml");
+			helper = new CSharpTestHelperForOpenApiDir(output, "swagger.yaml", Swagger2CodeGenSettings.Default);
 		}
 
 		void GenerateFromOpenApiAndBuild(string filePath, ISettings mySettings = null)

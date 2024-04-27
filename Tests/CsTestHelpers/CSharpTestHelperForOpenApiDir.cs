@@ -13,12 +13,14 @@ namespace SwagTests
 {
 	public class CSharpTestHelperForOpenApiDir: CSharpTestHelper, IOpenApiDirTestHelper
 	{
-		public CSharpTestHelperForOpenApiDir(ITestOutputHelper output, string defaultDefName): base(output)
+		public CSharpTestHelperForOpenApiDir(ITestOutputHelper output, string defaultDefName, ISettings defaultSettings) : base(output)
 		{
 			this.defaultDefName = defaultDefName;
+			this.defaultSettings = defaultSettings;
 		}
 
 		readonly string defaultDefName;
+		readonly ISettings defaultSettings;
 
 		static OpenApiDocument ReadDef(string filePath)
 		{
@@ -41,7 +43,7 @@ namespace SwagTests
 		/// <param name="mySettings"></param>
 		public void GenerateFromOpenApiAndBuild(string openapiDir, ISettings mySettings= null)
 		{ 
-			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings ?? CodeGenSettings.Default);
+			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings ?? defaultSettings);
 			var csFilePath = CreateUniqueFileName(openapiDir);
 			if (!Directory.Exists(resultsDir))
 			{
