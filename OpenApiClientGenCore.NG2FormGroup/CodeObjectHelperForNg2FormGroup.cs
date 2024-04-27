@@ -44,7 +44,7 @@ namespace Fonlow.TypeScriptCodeDom
 				GenerateCodeFromType(t, w, o);
 
 				var typeExpression = GetTypeParametersExpression(t);
-				var isGeneric = typeExpression.Contains("<");
+				var isGeneric = typeExpression.Contains('<');
 				if (!t.IsPartial && !isGeneric) //controllerClass is partial, as declared in CreateControllerClientClass()
 				{
 					GenerateAngularFormFromType(t, w, o);
@@ -109,9 +109,11 @@ namespace Fonlow.TypeScriptCodeDom
 			if (typeOfType == TypeOfType.IsInterface)
 			{
 				var extendsExpression = $"{typeParametersExpression}{baseTypesExpression}";
-				var isGeneric = extendsExpression.Contains("<");
+				var isGeneric = extendsExpression.Contains('<');
 				var formPropertiesSuffix = isGeneric ? String.Empty : "FormProperties";
+#pragma warning disable CA1820 // Test for empty strings using string length
 				var extendsExpressionForNg = extendsExpression == String.Empty ? String.Empty : $"{extendsExpression}{formPropertiesSuffix}";
+#pragma warning restore CA1820 // Test for empty strings using string length
 				var formGroupInterface = $"{name}FormProperties";
 				w.Write($"{o.IndentString}{accessModifier}{GetTypeOfTypeText(e)} {formGroupInterface}{extendsExpressionForNg} {{");
 				WriteAngularFormTypeMembersAndCloseBracing(e, w, o);
@@ -143,7 +145,7 @@ namespace Fonlow.TypeScriptCodeDom
 			if (typeOfType == TypeOfType.IsInterface)
 			{
 				var extendsExpression = $"{typeParametersExpression}{baseTypesExpression}";
-				var isGeneric = extendsExpression.Contains("<");
+				var isGeneric = extendsExpression.Contains('<');
 				var formPropertiesSuffix = isGeneric ? String.Empty : "FormProperties";
 				var formGroupInterface = $"{name}FormProperties";
 				w.Write($"{o.IndentString}{accessModifier}function Create{name}FormGroup() {{");
@@ -168,7 +170,7 @@ namespace Fonlow.TypeScriptCodeDom
 		string GetCodeMemberFieldTextForAngularFormControl(CodeMemberField codeMemberField)
 		{
 			var tsTypeName = RefineAngularFormControlTypeName(codeMemberField);
-			var fieldName = codeMemberField.Name.EndsWith("?") ? codeMemberField.Name.Substring(0, codeMemberField.Name.Length - 1) : codeMemberField.Name;
+			var fieldName = codeMemberField.Name.EndsWith('?') ? codeMemberField.Name.Substring(0, codeMemberField.Name.Length - 1) : codeMemberField.Name;
 			return $"{fieldName}: FormControl<{tsTypeName}>";
 		}
 
@@ -204,7 +206,7 @@ namespace Fonlow.TypeScriptCodeDom
 		string GetCodeMemberFieldTextForAngularFormGroup(CodeMemberField codeMemberField)
 		{
 			var customAttributes = codeMemberField.CustomAttributes;
-			var fieldName = codeMemberField.Name.EndsWith("?") ? codeMemberField.Name.Substring(0, codeMemberField.Name.Length - 1) : codeMemberField.Name;
+			var fieldName = codeMemberField.Name.EndsWith('?') ? codeMemberField.Name.Substring(0, codeMemberField.Name.Length - 1) : codeMemberField.Name;
 			if (customAttributes.Count > 0)
 			{
 				//Console.WriteLine("customAttributes: " + string.Join(", ",  customAttributes));
@@ -261,7 +263,7 @@ namespace Fonlow.TypeScriptCodeDom
 		/// </summary>
 		/// <param name="ca"></param>
 		/// <param name="validatorList"></param>
-		void AddStringLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		static void AddStringLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
 		{
 			//StringLengthAttribute has only one optional named attribute argument MinimumLength
 			// total number of arguments could be 1 or 2. If there's only one, it it max, otherwise, max and min
@@ -290,7 +292,7 @@ namespace Fonlow.TypeScriptCodeDom
 		/// </summary>
 		/// <param name="ca"></param>
 		/// <param name="validatorList"></param>
-		void AddNumberRangeValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		static void AddNumberRangeValidations(CodeAttributeDeclaration ca, List<string> validatorList)
 		{
 			Debug.Assert(ca.Arguments.Count == 2);
 			var arg0 = ca.Arguments[0];
@@ -308,7 +310,7 @@ namespace Fonlow.TypeScriptCodeDom
 			}
 		}
 
-		void AddMinLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		static void AddMinLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
 		{
 			Debug.Assert(ca.Arguments.Count == 1);
 			var arg0 = ca.Arguments[0];
@@ -316,7 +318,7 @@ namespace Fonlow.TypeScriptCodeDom
 			validatorList.Add($"Validators.minLength({arg0VExpression.Value})");
 		}
 
-		void AddMaxLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		static void AddMaxLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
 		{
 			Debug.Assert(ca.Arguments.Count == 1);
 			var arg0 = ca.Arguments[0];
@@ -324,7 +326,7 @@ namespace Fonlow.TypeScriptCodeDom
 			validatorList.Add($"Validators.maxLength({arg0VExpression.Value})");
 		}
 
-		void AddRegexValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		static void AddRegexValidations(CodeAttributeDeclaration ca, List<string> validatorList)
 		{
 			Debug.Assert(ca.Arguments.Count == 1);
 			var arg0 = ca.Arguments[0];

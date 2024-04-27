@@ -49,12 +49,6 @@ namespace Fonlow.CodeDom.Web
 
 		public static string CreateUriQueryForTs(string uriText, ParameterDescription[] parameterDescriptions)
 		{
-#if DEBUG
-			if (uriText== "mimic/agent/{agentNum}/store/get/{var}")
-			{
-				Debug.WriteLine("hehe");
-			}
-#endif
 			UriTemplate template = new(uriText);
 			string[] parameterNames;
 			try

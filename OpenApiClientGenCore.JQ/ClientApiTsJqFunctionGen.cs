@@ -4,6 +4,7 @@ using System.CodeDom;
 using System.Diagnostics;
 using System.Linq;
 using Fonlow.OpenApiClientGen.ClientTypes;
+using System.Globalization;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
@@ -37,8 +38,8 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		protected override void RenderImplementation()
 		{
-			string httpMethodName = HttpMethod.ToString().ToLower(); //Method is always uppercase.
-																	 //deal with parameters
+			string httpMethodName = HttpMethod.ToString().ToLower(CultureInfo.CurrentCulture); //Method is always uppercase.
+																							   //deal with parameters
 			var parameters = CreateCodeParameterDeclarationExpressions();
 
 			var returnTypeText = TypeMapper.MapCodeTypeReferenceToTsText(ReturnTypeReference);
@@ -66,8 +67,9 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			var jsUriQuery = UriQueryHelper.CreateUriQueryForTs(RelativePath, ParameterDescriptions);
-			string uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" :
-				RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
+#pragma warning disable CA1508 // Avoid dead conditional code
+			string uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" : RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
+#pragma warning restore CA1508 // Avoid dead conditional code
 
 			string headerHandlerCall = settings.HandleHttpRequestHeaders ? ", headersHandler" : String.Empty;
 

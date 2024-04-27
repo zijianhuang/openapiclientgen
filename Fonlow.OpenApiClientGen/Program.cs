@@ -10,7 +10,7 @@ using System.Diagnostics;
 
 namespace Fonlow.OpenApiClientGen
 {
-	class Program
+	sealed class Program
 	{
 		static void Main(string[] args)
 		{

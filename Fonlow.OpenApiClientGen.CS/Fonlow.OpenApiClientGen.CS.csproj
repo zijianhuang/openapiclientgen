@@ -11,6 +11,7 @@
     <Copyright>Copyright © Zijian Huang 2021-2024</Copyright>
     <Description>Generate C# client API codes</Description>
     <PackageReleaseNotes>More Doc comments generated.</PackageReleaseNotes>
+    <AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

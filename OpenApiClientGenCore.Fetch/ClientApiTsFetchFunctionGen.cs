@@ -16,8 +16,8 @@ namespace Fonlow.CodeDom.Web.Ts
 		const string FetchtHttpBlobResponse = "Blob";
 		//const string FetchHttpStringResponse = "string";
 
-		string returnTypeText = null;
-		string typeCast = null;
+		string returnTypeText;
+		string typeCast;
 		readonly string contentType;
 		readonly ISettings settings;
 
@@ -113,8 +113,9 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			string jsUriQuery = UriQueryHelper.CreateUriQueryForTs(RelativePath, ParameterDescriptions);
-			string uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" :
-				RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
+#pragma warning disable CA1508 // Avoid dead conditional code
+			string uriText = jsUriQuery == null ? $"this.baseUri + '{RelativePath}'" : RemoveTrialEmptyString($"this.baseUri + '{jsUriQuery}'");
+#pragma warning restore CA1508 // Avoid dead conditional code
 
 			if (ReturnTypeReference != null && ReturnTypeReference.BaseType == "System.String" && ReturnTypeReference.ArrayElementType == null)//stringAsString is for .NET Core Web API
 			{

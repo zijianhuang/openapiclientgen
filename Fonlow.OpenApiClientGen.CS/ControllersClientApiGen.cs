@@ -1,26 +1,19 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
-
-using Microsoft.CodeAnalysis;
 using Microsoft.OpenApi.Models;
-
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Fonlow.OpenApiClientGen.ClientTypes;
 
 namespace Fonlow.OpenApiClientGen.CS
 {
 	/// <summary>
 	/// Store CodeDom references shared by all functions of the client API class.
 	/// </summary>
-	internal class SharedContext
+	sealed internal class SharedContext
 	{
 		internal CodeFieldReferenceExpression ClientReference { get; set; }
 		internal CodeFieldReferenceExpression BaseUriReference { get; set; }

@@ -9,6 +9,7 @@
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <NeutralLanguage>en</NeutralLanguage>
     <Version>2.2</Version>
+    <AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,8 +17,8 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen\$(OutDir) /Y" Condition="$([MSBuild]::IsOSPlatform('Windows'))"/>
-    <Exec Command="cp $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen/$(OutDir)" Condition="!$([MSBuild]::IsOSPlatform('Windows'))"/>
+    <Exec Command="copy $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen\$(OutDir) /Y" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
+    <Exec Command="cp $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen/$(OutDir)" Condition="!$([MSBuild]::IsOSPlatform('Windows'))" />
   </Target>
 
 </Project>

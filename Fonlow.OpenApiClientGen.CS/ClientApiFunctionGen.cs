@@ -15,7 +15,7 @@ namespace Fonlow.OpenApiClientGen.CS
 	/// <summary>
 	/// Generate a client function upon OpenApiOperation for C#
 	/// </summary>
-	internal class ClientApiFunctionGen
+	sealed internal class ClientApiFunctionGen
 	{
 		OpenApiOperation apiOperation;
 		ParameterDescription[] parameterDescriptions;
@@ -23,7 +23,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		string requestBodyComment;
 
 		string RelativePath;
-		protected CodeTypeReference returnTypeReference;
+		CodeTypeReference returnTypeReference;
 		//bool returnTypeIsStream;
 		CodeMemberMethod method;
 		ComponentsToCsTypes coms2CsTypes;
@@ -72,7 +72,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			}
 #endif
 
-			if (actionName.EndsWith("Async"))
+			if (actionName.EndsWith("Async", StringComparison.OrdinalIgnoreCase))
 				actionName = actionName[0..^5];
 
 			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, actionName, renamer);
@@ -276,7 +276,9 @@ namespace Fonlow.OpenApiClientGen.CS
 			}
 
 			string jsUriQuery = UriQueryHelper.CreateUriQuery(RelativePath, parameterDescriptions);
+#pragma warning disable CA1508 // Avoid dead conditional code. False alarm
 			string uriText = jsUriQuery == null ? $"\"{RelativePath}\"" : RemoveTrialEmptyString($"\"{jsUriQuery}\"");
+#pragma warning restore CA1508 // Avoid dead conditional code
 
 			method.Statements.Add(new CodeVariableDeclarationStatement(
 				new CodeTypeReference("var"), "requestUri",
@@ -570,13 +572,13 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		private static string RemoveTrialEmptyString(string s)
 		{
-			int p = s.IndexOf("+\"\"");
+			int p = s.IndexOf("+\"\"", StringComparison.Ordinal);
 			if (p >= 0)
 			{
 				return s.Remove(p, 3);
 			}
 
-			int p2 = s.IndexOf("))\"");
+			int p2 = s.IndexOf("))\"", StringComparison.Ordinal);
 			if (p2 >= 0)
 			{
 				return s.Remove(p2 + 2, 1);
